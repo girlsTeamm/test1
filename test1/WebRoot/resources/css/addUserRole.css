@@ -1,0 +1,26 @@
+
+.box{
+	width:80%;
+	background:#fff;
+	left:50%;
+	position: absolute;
+	transform: translate(-50%,20%);
+	box-sizing: border-box;
+	padding: 40px 30px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	border-radius: 10px;
+	
+	
+}
+
+.box button{
+	transform: translate(-50%,0%);
+}
+
+@media screen and (max-width: 700px){
+   .box{
+     width:100%;
+     transform: translate(-50%,0%);
+   }
+}
+

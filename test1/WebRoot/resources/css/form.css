@@ -1,0 +1,32 @@
+body{
+ /*  background: #EDEDED !important;   */
+   
+   background-image: url('../images/backphoto.jpg');
+   background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('../images/backphoto.jpg');
+	background-size: cover;
+}
+
+.formbox{
+	width:50%;
+	background:#fff;
+	left:50%;
+	position: absolute;
+	transform: translate(-50%,5%);
+	padding: 70px 30px;
+	float: right;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.formbox h3{
+	margin: 0;
+	float: right;
+	
+}
+.formbox p{
+	float: right;
+}
+@media screen and (max-width: 700px){
+   .formbox{
+     width:100%;
+     transform: translate(-50%,0%);
+   }
+}

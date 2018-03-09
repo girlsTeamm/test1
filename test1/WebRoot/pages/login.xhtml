@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:head>
+   <link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/login.css" />
+				 <link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/form.css" />
+				
+</h:head>
+<div class="container">
+	<b:panelGrid colSpans="12">		
+	<h2>أهلاً بك في شكوى !</h2>
+<div class="loginbox">
+<h:form >
+       <img class="proimage" src="../test1/javax.faces.resource/images/loginLogo.jpg"/>
+       <b:inputText placeholder="اسم المستخدم" type="text"></b:inputText>
+      
+       <b:inputText placeholder="كلمة المرور" type="Password"></b:inputText>
+       
+       <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    تسجيل الدخول</button>
+                                
+       <b:panelGrid colSpans="7,5" style="text-align:right;">
+       <b:form>
+  <b:selectBooleanCheckbox value="" caption="تذكرني" />
+</b:form>
+       <a href="" >نسيت كلمة المرور؟</a>
+       </b:panelGrid>
+    
+</h:form>
+</div>
+
+</b:panelGrid>
+
+
+       
+</div>
+</ui:composition>

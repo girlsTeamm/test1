@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:head>
+   <link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/signUp.css" />	
+		 <link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/form.css" />
+</h:head>
+<div class="container">
+		
+<div class="signUpbox">
+<h:form >
+<b:panelGrid colSpans="12">	
+    <h3>إنشاء حساب</h3>
+    </b:panelGrid>
+ <hr />
+ 
+    <b:panelGrid colSpans="2,6,4" style="text-align:right;">	
+    <p:outputLabel value="الاسم الأول"/>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.name}"></b:inputText>
+    <h1/>
+    
+       <p:outputLabel value="الشهرة"/>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.surname}"></b:inputText>
+      <h1/>
+   
+       <p:outputLabel value="اسم الأب"/>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.fatherName}"></b:inputText>
+      <h1/>
+ 
+       <p:outputLabel value="اسم الأم"/>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.motherName}"></b:inputText>
+      <h1/>
+ </b:panelGrid>
+         
+           <b:panelGrid colSpans="2,8,2" style="text-align:right;">
+       <p:outputLabel value="رقم الهاتف"/>
+       <b:inputText placeholder="" ></b:inputText>
+      <h1/>
+
+       <p:outputLabel value="الايميل"/>   
+       <b:form horizontal="true">
+       <b:inputText placeholder="" ></b:inputText>
+       <small>لضمان أمان حسابك واسترداده في حال نسيت كلمة المرور.</small>  
+      </b:form>
+      <h1/>
+</b:panelGrid><br/><br/>
+
+    <b:panelGrid colSpans="2,6,4" style="text-align:right;">
+       <p:outputLabel value="اسم المستخدم"/>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.userName}"></b:inputText>
+      <h1/>
+ 
+       <p:outputLabel value="كلمة المرور" type="Password"/>
+       <b:inputText placeholder="من 5 إلى 15 حرف" value="#{sysUserBean.sysuser.password}"></b:inputText>
+        <h1/>  
+        </b:panelGrid>
+        
+       <b:panelGrid colSpans="2,6,4">
+       <p:outputLabel value=""/>
+          <b:selectBooleanCheckbox value="" caption="عرض كلمة المرور" />
+          </b:panelGrid>
+  <br/><br/>
+  
+  
+     <!--  <p:commandButton value="إنشاء حساب" ajax="true" process="@form"
+				action="#{sysUserBean.addUser()}" update="@all"></p:commandButton>-->
+				
+				<button class="green" onclick="#{sysUserBean.addUser()}">خدمية</button>
+                    
+</h:form>
+</div>
+
+</div>
+
+</ui:composition>

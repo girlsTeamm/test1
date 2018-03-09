@@ -1,0 +1,49 @@
+
+.proimage{
+	width:100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top : 5%;
+	left: calc(50% - 50px);
+}
+.loginbox{
+	width:350px;
+	background:#F7F7F7;
+	left:50%;
+	position: absolute;
+	transform: translate(-50%,10%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	padding-top:145px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.loginbox a{
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 20px;
+	color: #85b7e0;
+	float: right;
+	margin-top: 10px;
+}
+.loginbox a:hover{
+	color :#296da5;
+	text-decoration: underline;
+}
+.loginbox button{
+	background: #428BCA;
+}
+.container h2{
+	color: #fff;
+	text-align: center;
+	padding-top: 20px;
+	margin: 0;
+}
+
+@media screen and (max-width: 400px){
+   .loginbox{
+     width:90%;
+     left:55%;
+   }
+}

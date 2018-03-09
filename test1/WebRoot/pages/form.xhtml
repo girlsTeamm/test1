@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:head>
+   <link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/form.css" />		
+</h:head>
+<div class="container">
+		
+<div class="formbox">
+<h:form >
+<b:panelGrid colSpans="12">	
+    <h3>تقديم شكوى</h3><br />
+    </b:panelGrid>
+    <b:panelGrid colSpans="12">	
+    <p>الرجاء ملئ كامل الاستمارة لمساعدتنا في فهم شكاوك</p><br /><br />
+    <hr />
+</b:panelGrid>
+
+
+    <b:panelGrid colSpans="2,6,4" style="text-align:right;">	
+    <p:outputLabel value="الاسم الأول"/>
+       <b:inputText placeholder=""></b:inputText>
+  <h1></h1>
+ 
+       <p:outputLabel value="الشهرة"/>
+       <b:inputText placeholder=""></b:inputText>
+   <h1></h1>
+         
+      <p:outputLabel  value="المحافظة"  style="float:right;"/>     
+
+        <b:selectOneMenu  value="">
+            <f:selectItem itemLabel="دمشق" itemValue="" />
+            <f:selectItem itemLabel="ريف دمشق" itemValue="Xbox One" />
+            <f:selectItem itemLabel="حمص" itemValue="PS4" />
+            <f:selectItem itemLabel="درعا" itemValue="Wii U" />
+        </b:selectOneMenu>
+       <h1></h1>
+       
+           <p:outputLabel value="رقم الهاتف"/>
+               <b:inputText placeholder=""></b:inputText>
+           <h1></h1>
+
+       <p:outputLabel value="الايميل"/>   
+         <b:inputText placeholder=""></b:inputText>  
+        <h1></h1>
+
+        
+        </b:panelGrid><br/>
+       
+    <b:panelGrid colSpans="12" >
+         <p:outputLabel  value="متى حدثت المشكلة التي تريد تقديم الشكوى بشأنها؟"/>
+    
+    </b:panelGrid>   
+    <p:calendar/>
+    <br/><br/>
+        
+<b:panelGrid colSpans="12">	
+      <p:outputLabel value="ماهو اسم المؤسسة التي تشكو منها؟"/>
+      </b:panelGrid>
+      
+      <b:panelGrid colSpans="6,6">	
+
+    <b:inputText placeholder=""></b:inputText>
+      <h1></h1>
+    </b:panelGrid><br/>
+    
+    <b:panelGrid colSpans="12">	
+      <p:outputLabel value="ما الذي تأمل أن نتمكن من تحقيقه بخصوص شكواك؟"/>
+      </b:panelGrid>
+      
+      <b:panelGrid colSpans="6,6">	
+
+    <b:inputText placeholder=""></b:inputText>
+      <h1></h1>
+    </b:panelGrid><br/>
+    
+  <b:panelGrid colSpans="12" >
+     <p:outputLabel  value="وصف الشكوى"/>
+     </b:panelGrid>
+      <b:panelGrid colSpans="12">
+    <p:inputTextarea rows="5" 
+    autoResize="false"  />
+    </b:panelGrid>
+  <br/><br/>
+  
+
+  
+  
+ <b:panelGrid colSpans="3,3,3,3" style="text-align:center;">
+     <p:button value="إرسال" icon="fa fa-fw fa-check" ></p:button>
+ <h1></h1>
+ <p:button value="إلغاء" icon="fa fa-fw fa-remove"></p:button>
+  <h1></h1>
+
+    </b:panelGrid>
+</h:form>
+</div>
+
+</div>
+</ui:composition>

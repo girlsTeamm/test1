@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions" lang="ar">
+
+<h:head>
+	<link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/style.css" />
+	<link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/bootstrap/bootstrap-rtl.css"/>		
+</h:head>
+<body>
+	<h:form id="form_menu">
+		
+		<b:navBar brand="شكوى" brandHref="" 
+		id="navBar_menu" inverse="true" fluid="true" >
+			
+		    <b:navbarLinks style="font-size:large;">
+	    	<b:navLink value="الصفحة الرئيسية" ajax="true" 
+					oncomplete="primeUpdate();return false;" styleClass="handCursor"
+					onclick="ajax:pageNavigation.navigate('/pages/homePage.xhtml')"></b:navLink>
+
+			
+			<b:navLink value="معلومات" ajax="true"
+					oncomplete="primeUpdate();return false;" styleClass="handCursor"
+					onclick="ajax:pageNavigation.navigate('')"></b:navLink>
+
+
+			<b:navLink value="أسئلة متكررة" ajax="true"
+					oncomplete="primeUpdate();return false;" styleClass="handCursor"
+					onclick="ajax:pageNavigation.navigate('/pages/form.xhtml')"></b:navLink>
+
+
+			<b:navLink value="تعديل السماحيات" ajax="true"
+					oncomplete="primeUpdate();return false;" styleClass="handCursor"
+					onclick="ajax:pageNavigation.navigate('/pages/showUsers.xhtml')"></b:navLink>
+
+			</b:navbarLinks>
+
+  <b:navbarLinks pull="left"><b:navLink value="    " href=""></b:navLink></b:navbarLinks>
+  <b:navbarLinks pull="right" styleClass="hidden-xs" style="font-size:large;">
+			<b:navLink value="تسجيل الدخول" ajax="true"
+				 styleClass="handCursor"
+					onclick="ajax:pageNavigation.navigate('/pages/login.xhtml')"
+						oncomplete="primeUpdate();return false;"
+					icon="glyphicon glyphicon-log-in"></b:navLink>
+
+			
+			<b:navLink value="إنشاء حساب" ajax="true"
+					oncomplete="primeUpdate();return false;" styleClass="handCursor"
+					onclick="ajax:pageNavigation.navigate('/pages/signUp.xhtml')"
+					icon=""></b:navLink>
+
+			</b:navbarLinks>
+			
+
+		</b:navBar>
+	</h:form>
+	<b:column id="panel_content" span="12" styleClass="content" >
+		<ui:insert name="content" />
+	</b:column>
+</body>
+</html>

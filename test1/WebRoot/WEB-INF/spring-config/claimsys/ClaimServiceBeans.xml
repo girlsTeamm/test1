@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+<!-- coding DAO's -->
+
+
+	<bean name="rolePermissionService" class="com.claim.model.service.impl.RolePermissionServiceImpl">
+		<property name="dao" ref="rolePermissionDao"></property>
+	</bean>
+
+	<bean name="sysPermissionService" class="com.claim.model.service.impl.SysPermissionServiceImpl">
+		<property name="dao" ref="sysPermissionDao"></property>
+	</bean>
+
+	<bean name="sysRoleService" class="com.claim.model.service.impl.SysRoleServiceImpl">
+		<property name="dao" ref="sysRoleDao"></property>
+	</bean>
+
+	<bean name="sysUserService" class="com.claim.model.service.impl.SysUserServiceImpl">
+		<property name="dao" ref="sysUserDao"></property>
+	</bean>
+
+	<bean name="userRoleService" class="com.claim.model.service.impl.UserRoleServiceImpl">
+		<property name="dao" ref="userRoleDao"></property>
+	</bean>
+</beans>
