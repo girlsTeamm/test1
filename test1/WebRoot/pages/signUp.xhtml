@@ -69,11 +69,12 @@
           </b:panelGrid>
   <br/><br/>
   
-  
-     <!--  <p:commandButton value="إنشاء حساب" ajax="true" process="@form"
-				action="#{sysUserBean.addUser()}" update="@all"></p:commandButton>-->
+         <b:commandButton value="إنشاء حساب" icon="check" ajax="true" update="@all"
+                       onclick="#{sysUserBean.addUser()}" 
+                       look="primary" process="@form">
+         </b:commandButton>
 				
-				<button class="green" onclick="#{sysUserBean.addUser()}">خدمية</button>
+		
                     
 </h:form>
 </div>

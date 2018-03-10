@@ -13,28 +13,28 @@
 		href="../test1/javax.faces.resource/css/bootstrap/bootstrap-rtl.css"/>		
 </h:head>
 <body>
-	<h:form id="form_menu">
+	<h:form class="form_menu">
 		
-		<b:navBar brand="شكوى" brandHref="" 
+		<b:navBar brand="شكوى" brandHref=""
 		id="navBar_menu" inverse="true" fluid="true" >
 			
 		    <b:navbarLinks style="font-size:large;">
-	    	<b:navLink value="الصفحة الرئيسية" ajax="true" 
+	    	<b:navLink value="الصفحة الرئيسية" ajax="true" update="@(.content)"
 					oncomplete="primeUpdate();return false;" styleClass="handCursor"
 					onclick="ajax:pageNavigation.navigate('/pages/homePage.xhtml')"></b:navLink>
 
 			
-			<b:navLink value="معلومات" ajax="true"
+			<b:navLink value="معلومات" ajax="true" update="@(.content)"
 					oncomplete="primeUpdate();return false;" styleClass="handCursor"
-					onclick="ajax:pageNavigation.navigate('')"></b:navLink>
+					onclick="ajax:pageNavigation.navigate('/pages/homePage.xhtml')"></b:navLink>
 
 
-			<b:navLink value="أسئلة متكررة" ajax="true"
+			<b:navLink value="أسئلة متكررة" ajax="true" update="@(.content)"
 					oncomplete="primeUpdate();return false;" styleClass="handCursor"
 					onclick="ajax:pageNavigation.navigate('/pages/form.xhtml')"></b:navLink>
 
 
-			<b:navLink value="تعديل السماحيات" ajax="true"
+			<b:navLink value="تعديل السماحيات" ajax="true" 
 					oncomplete="primeUpdate();return false;" styleClass="handCursor"
 					onclick="ajax:pageNavigation.navigate('/pages/showUsers.xhtml')"></b:navLink>
 
@@ -42,14 +42,14 @@
 
   <b:navbarLinks pull="left"><b:navLink value="    " href=""></b:navLink></b:navbarLinks>
   <b:navbarLinks pull="right" styleClass="hidden-xs" style="font-size:large;">
-			<b:navLink value="تسجيل الدخول" ajax="true"
+			<b:navLink value="تسجيل الدخول" ajax="true" update="@(.content)"
 				 styleClass="handCursor"
 					onclick="ajax:pageNavigation.navigate('/pages/login.xhtml')"
 						oncomplete="primeUpdate();return false;"
 					icon="glyphicon glyphicon-log-in"></b:navLink>
 
 			
-			<b:navLink value="إنشاء حساب" ajax="true"
+			<b:navLink value="إنشاء حساب" ajax="true" update="@(.content)"
 					oncomplete="primeUpdate();return false;" styleClass="handCursor"
 					onclick="ajax:pageNavigation.navigate('/pages/signUp.xhtml')"
 					icon=""></b:navLink>

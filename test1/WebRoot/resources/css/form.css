@@ -4,6 +4,9 @@ body{
    background-image: url('../images/backphoto.jpg');
    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('../images/backphoto.jpg');
 	background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .formbox{
@@ -30,3 +33,4 @@ body{
      transform: translate(-50%,0%);
    }
 }
+

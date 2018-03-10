@@ -92,11 +92,18 @@
 
   
   
- <b:panelGrid colSpans="3,3,3,3" style="text-align:center;">
-     <p:button value="إرسال" icon="fa fa-fw fa-check" ></p:button>
+ <b:panelGrid colSpans="3,3,3,3">
+   <h1></h1>
+       <b:commandButton value="إرسال" icon="check" ajax="true" 
+                       onclick="" 
+                       look="primary">
+      </b:commandButton>
+
+       <b:commandButton value="إلغاء" icon="remove" ajax="true" 
+                       onclick="" 
+                       look="danger">
+      </b:commandButton>
  <h1></h1>
- <p:button value="إلغاء" icon="fa fa-fw fa-remove"></p:button>
-  <h1></h1>
 
     </b:panelGrid>
 </h:form>

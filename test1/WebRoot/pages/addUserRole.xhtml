@@ -19,24 +19,21 @@
 <h:form >
 <b:panelGrid colSpans="3,9" >	
 
-       <b:form horizontal="true">
+
+       <b:form horizontal="true" >
        <h2>اسم المستخدم</h2>
        <p>(محصح,مدقق,مستخدم)</p> 
       </b:form>
+      
+     
 
-    	<b:dataTable id="role" var="role" value="#{sysRoleBean.getListSysRole()}" style="margin-bottom:20px">
+      
+   
+  <b:dataTable value="#{sysRoleBean.getListSysRole()}" var="role">
+    <b:dataTableColumn value="#{role.arabicName} /#{role.englishName}" label="الاسم"/>
+    <b:dataTableColumn value="#{role.description}" label="الوصف"/>
+  </b:dataTable>
 
-					 
-					 <b:column headerText="الاسم">
-								<h:outputText value="#{role.arabicName} /#{role.englishName}" />
-					       </b:column>
-					<b:column headerText="الوصف">
-								<h:outputText value="#{role.description}" />
-					       </b:column>
-			
-							
-		       		
-		   		</b:dataTable>
 
 </b:panelGrid>      
 </h:form>

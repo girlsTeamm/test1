@@ -8,33 +8,35 @@
 	xmlns:pe="http://primefaces.org/ui/extensions">
 
 <h:head>
-   <link rel="stylesheet" type="text/css"
+ <link rel="stylesheet" type="text/css"
 		href="../test1/javax.faces.resource/css/showUsers.css" />	
 		 <link rel="stylesheet" type="text/css"
 		href="../test1/javax.faces.resource/css/form.css" />
+		 <link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/homepage.css" />
 </h:head>
-<div class="container">
-		
-<div class="signUpbox">
-<h:form >
-<b:panelGrid colSpans="12">	
-    	<p:dataTable id="user" var="user" value="#{sysUserBean.getListUser()}" >
 
-					 
-      <p:column headerText="الاسم">
-	  <h:outputText value="#{user.name} #{user.surname}" />
-	  </p:column>
-	    
-	  <p:column headerText="">	
-	  <button onclick="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}">تعديل السماحيات</button>
-	  </p:column>
-							
-  </p:dataTable>
+<div class="box">
+<h:form >
+
+    
+<b:panelGrid colSpans="12">	
+
+<b:dataTable value="#{sysUserBean.getListUser()}" var="user" class="editableUsersTable">
+    <b:dataTableColumn value="#{user.name} #{user.surname}" label="الاسم"/>
+    <b:dataTableColumn label="تعديل السماحيات">
+      <b:commandButton value="تعديل" icon="edit" ajax="true" update="@(.editableUsersTable)"
+                       onclick="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}" 
+                       look="">
+      </b:commandButton>
+    </b:dataTableColumn>
+  </b:dataTable> 
+
 
 </b:panelGrid>      
 </h:form>
 </div>
 
-</div>
+
 
 </ui:composition>
