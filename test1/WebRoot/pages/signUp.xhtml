@@ -22,21 +22,26 @@
     </b:panelGrid>
  <hr />
  
-    <b:panelGrid colSpans="2,6,4" style="text-align:right;">	
+    <b:panelGrid id="panel" colSpans="2,6,4" style="text-align:right;">	
     <p:outputLabel value="الاسم الأول"/>
-       <b:inputText placeholder="" value="#{sysUserBean.sysuser.name}"></b:inputText>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.name}"
+       onkeyup=""  onclick="" update="@none"  >
+       </b:inputText>
     <h1/>
     
        <p:outputLabel value="الشهرة"/>
-       <b:inputText placeholder="" value="#{sysUserBean.sysuser.surname}"></b:inputText>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.surname}"
+       onkeyup=""  onclick="" update="@none"></b:inputText>
       <h1/>
    
        <p:outputLabel value="اسم الأب"/>
-       <b:inputText placeholder="" value="#{sysUserBean.sysuser.fatherName}"></b:inputText>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.fatherName}"
+       onkeyup=""  onclick="" update="@none"></b:inputText>
       <h1/>
  
        <p:outputLabel value="اسم الأم"/>
-       <b:inputText placeholder="" value="#{sysUserBean.sysuser.motherName}"></b:inputText>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.motherName}"
+       onkeyup=""  onclick="" update="@none"></b:inputText>
       <h1/>
  </b:panelGrid>
          
@@ -55,11 +60,13 @@
 
     <b:panelGrid colSpans="2,6,4" style="text-align:right;">
        <p:outputLabel value="اسم المستخدم"/>
-       <b:inputText placeholder="" value="#{sysUserBean.sysuser.userName}"></b:inputText>
+       <b:inputText placeholder="" value="#{sysUserBean.sysuser.userName}"
+       onkeyup=""  onclick="" update="@none"></b:inputText>
       <h1/>
  
        <p:outputLabel value="كلمة المرور" type="Password"/>
-       <b:inputText placeholder="من 5 إلى 15 حرف" value="#{sysUserBean.sysuser.password}"></b:inputText>
+       <b:inputText placeholder="من 5 إلى 15 حرف" value="#{sysUserBean.sysuser.password}"
+       onkeyup=""  onclick="" update="@none"></b:inputText>
         <h1/>  
         </b:panelGrid>
         
@@ -69,11 +76,10 @@
           </b:panelGrid>
   <br/><br/>
   
-         <b:commandButton value="إنشاء حساب" icon="check" ajax="true" update="@all"
-                       onclick="#{sysUserBean.addUser()}" 
-                       look="primary" process="@form">
-         </b:commandButton>
-				
+       
+				<b:commandButton value="إنشاء حساب" update="panel" ajax="true"
+				onclick="#{sysUserBean.addUser()}" look="primary" 
+				icon="check"></b:commandButton>
 		
                     
 </h:form>

@@ -22,13 +22,15 @@
     
 <b:panelGrid colSpans="12">	
 
-<b:dataTable value="#{sysUserBean.getListUser()}" var="user" class="editableUsersTable">
+<b:dataTable value="#{sysUserBean.getListUser()}" var="user" >
     <b:dataTableColumn value="#{user.name} #{user.surname}" label="الاسم"/>
     <b:dataTableColumn label="تعديل السماحيات">
-      <b:commandButton value="تعديل" icon="edit" ajax="true" update="@(.editableUsersTable)"
-                       onclick="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}" 
-                       look="">
+      <b:commandButton value="تعديل" icon="edit" ajax="true" update="@(.contant)"
+                       onclick="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}" look="">
+                       <f:actionListener binding="#{sysUserBean.setUserId()}"/>
+                        <f:param name="UserId" value="10" />
       </b:commandButton>
+ 
     </b:dataTableColumn>
   </b:dataTable> 
 

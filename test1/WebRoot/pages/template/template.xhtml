@@ -34,9 +34,10 @@
 					onclick="ajax:pageNavigation.navigate('/pages/form.xhtml')"></b:navLink>
 
 
-			<b:navLink value="تعديل السماحيات" ajax="true" 
-					oncomplete="primeUpdate();return false;" styleClass="handCursor"
-					onclick="ajax:pageNavigation.navigate('/pages/showUsers.xhtml')"></b:navLink>
+			<b:navLink value="تعديل السماحيات" ajax="true" update="@(.content)"
+					styleClass="handCursor"
+					onclick="ajax:pageNavigation.navigate('/pages/showUsers.xhtml')"
+					oncomplete="primeUpdate();return false;"></b:navLink>
 
 			</b:navbarLinks>
 

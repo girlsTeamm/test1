@@ -14,29 +14,44 @@
 		href="../test1/javax.faces.resource/css/form.css" />
 </h:head>
 <div class="container">
-		
-<div class="box">
-<h:form >
-<b:panelGrid colSpans="3,9" >	
 
+ 
+<p>You've been redirected to this book markable page with button.
+    ViewParameter you've passed is <strong>"
+    #{sysUserBean.alaa}"</strong>
+</p>
+<div class="box">
+
+<b:form horizontal="true" >
+  
+         <b:commandButton value="" icon="glyphicon glyphicon-arrow-right" ajax="true" 
+         update="@(.contant)" look=""
+         onclick="#{pageNavigation.navigate('/pages/showUsers.xhtml')}" >
+         </b:commandButton>
+         
+         <br/><br/>
+         
+         
+
+   <b:panelGrid colSpans="3,9" >	
 
        <b:form horizontal="true" >
        <h2>اسم المستخدم</h2>
        <p>(محصح,مدقق,مستخدم)</p> 
+       <h1/><h1/>
       </b:form>
       
-     
+ 
 
+ <!--  <b:dataTable value="#{sysUserBean.ShowRoleForUser(sysUserBean.sysuser.id)}" var="role">
+    <b:dataTableColumn value="#{role.arabicName}" label="الاسم"/>
+  </b:dataTable> -->
+
+</b:panelGrid>
+
+</b:form>
       
-   
-  <b:dataTable value="#{sysRoleBean.getListSysRole()}" var="role">
-    <b:dataTableColumn value="#{role.arabicName} /#{role.englishName}" label="الاسم"/>
-    <b:dataTableColumn value="#{role.description}" label="الوصف"/>
-  </b:dataTable>
 
-
-</b:panelGrid>      
-</h:form>
 </div>
 
 </div>
