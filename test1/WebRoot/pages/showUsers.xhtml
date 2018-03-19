@@ -25,11 +25,10 @@
 <b:dataTable value="#{sysUserBean.getListUser()}" var="user" >
     <b:dataTableColumn value="#{user.name} #{user.surname}" label="الاسم"/>
     <b:dataTableColumn label="تعديل السماحيات">
-      <b:commandButton value="تعديل" icon="edit" ajax="true" update="@(.contant)"
+      <h:commandButton value="تعديل" icon="edit" ajax="true"
                        onclick="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}" look="">
-                       <f:actionListener binding="#{sysUserBean.setUserId()}"/>
-                        <f:param name="UserId" value="10" />
-      </b:commandButton>
+                        <f:param name="UserId" value="#{user.id}" />
+      </h:commandButton>
  
     </b:dataTableColumn>
   </b:dataTable> 

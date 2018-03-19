@@ -43,19 +43,6 @@ public class SysUserBean implements Serializable {
 	private String userid;
 
 	
-	
-	  public String getUserid() {
-		return userid;
-	}
-	public void setUserid(String userid) {
-		this.userid = userid;
-	}
-	public void setUserId() {
-	      FacesContext fc = FacesContext.getCurrentInstance();
-	      Map<String,String> params = 
-	         fc.getExternalContext().getRequestParameterMap();
-	      userid =  params.get("UserId"); 
-	   }
 	@PostConstruct
 	public void init() {
 	}
@@ -65,15 +52,13 @@ public class SysUserBean implements Serializable {
 		userRoleService= (UserRoleService)BeanUtility.getBean("userRoleService");
 		sysRoleService=(SysRoleService)BeanUtility.getBean("sysRoleService");
 		listuser= new ArrayList<SysUser>();
-		userRole = new HashSet<UserRole>();
+		userRole = new HashSet<>();
 	}
 	
 
-	public SysUserBean(SysUser sysuser,UserRoleService userRoleService, SysUserService sysUserService, List<SysUser> listuser,Set<UserRole> userRole) {
+	public SysUserBean(SysUser sysuser, List<SysUser> listuser,Set<UserRole> userRole) {
 		super();
 		this.sysuser = sysuser;
-		this.sysUserService = sysUserService;
-		this.userRoleService= userRoleService;
 		this.listuser = listuser;
 		this.userRole=userRole;
 	}
@@ -115,7 +100,7 @@ public class SysUserBean implements Serializable {
 	public List<SysUser> getListUser(){
 		return sysUserService.getAll();	
 	}
-	public Set getUserRole() {
+	public Set<UserRole> getUserRole() {
 		return userRole;
 	}
 	
@@ -132,15 +117,23 @@ public class SysUserBean implements Serializable {
 	}
 	
 	
-	@SuppressWarnings("unchecked")
-	public List<SysRole> ShowRoleForUser(Integer userid){
-		SysUser te= sysUserService.getById(userid);
-		userRole=te.getUserRoles();
+    public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	
+
+	public List<SysRole> ShowRoleForUser(String userid){
+		Integer id = Integer.parseInt(userid);
+		SysUser user= sysUserService.getById(id);
+		userRole=user.getUserRoles();
 		
-		List<SysRole> listRole=new ArrayList<>();
+		List<SysRole> listRole = new ArrayList<SysRole>();
 		
-			for(UserRole g:userRole){
-				SysRole temp=sysRoleService.getById(g.getSysRole().getId());
+			for(UserRole ur:userRole){
+				SysRole temp=sysRoleService.getById(ur.getSysRole().getId());
 				listRole.add(temp);
 			}
 			return listRole;

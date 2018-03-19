@@ -14,16 +14,14 @@
 		href="../test1/javax.faces.resource/css/form.css" />
 </h:head>
 <div class="container">
+<f:metadata>
+    <f:viewParam name="UserId" value="#{sysUserBean.userid}" />
+</f:metadata>
 
- 
-<p>You've been redirected to this book markable page with button.
-    ViewParameter you've passed is <strong>"
-    #{sysUserBean.alaa}"</strong>
-</p>
 <div class="box">
 
 <b:form horizontal="true" >
-  
+
          <b:commandButton value="" icon="glyphicon glyphicon-arrow-right" ajax="true" 
          update="@(.contant)" look=""
          onclick="#{pageNavigation.navigate('/pages/showUsers.xhtml')}" >
@@ -41,11 +39,10 @@
        <h1/><h1/>
       </b:form>
       
- 
+<b:dataTable value="#{sysUserBean.ShowRoleForUser(sysUserBean.userid)}" var="role" >
+    <b:dataTableColumn value="#{role.arabicName} /#{role.englishName}" label="الاسم"/>
+  </b:dataTable> 
 
- <!--  <b:dataTable value="#{sysUserBean.ShowRoleForUser(sysUserBean.sysuser.id)}" var="role">
-    <b:dataTableColumn value="#{role.arabicName}" label="الاسم"/>
-  </b:dataTable> -->
 
 </b:panelGrid>
 

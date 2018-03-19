@@ -37,6 +37,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public List<Entity> insert(List<Entity> entities) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).insert(entities);
@@ -44,6 +45,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public boolean update(Entity entity) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).update(entity);
@@ -51,6 +53,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public boolean update(List<Entity> entities) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).update(entities);
@@ -58,6 +61,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public boolean delete(Entity entity) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).delete(entity);
@@ -65,6 +69,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public boolean delete(List<Entity> entities) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).delete(entities);
@@ -72,6 +77,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public boolean merge(Entity entity) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).merge(entity);
@@ -79,6 +85,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public Entity getById(Id id) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).getById(id);
@@ -86,6 +93,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public Entity getByUniqueField(String propertyName, Object propertyValue) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).getByUniqueField(propertyName, propertyValue);
@@ -93,6 +101,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public Entity load(Id id) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).load(id);
@@ -100,6 +109,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public List<Entity> getPages(Integer start, Integer pageSize) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).getPages(start, pageSize);
@@ -115,6 +125,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public List<Entity> getPagesByFilter(Integer start, Integer pageSize, String propertyName, Object propertyValue) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).getPagesByFilter(start, pageSize, propertyName, propertyValue);
@@ -122,6 +133,7 @@ public class GenericServiceImpl<Entity extends Serializable,Dao extends Serializ
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public List<Entity> getAllByFilter(String propertyName, Object propertyValue) {
 		// TODO Auto-generated method stub
 		return ((GenericDao<Entity,Id>)dao).getAllByFilter(propertyName, propertyValue);
