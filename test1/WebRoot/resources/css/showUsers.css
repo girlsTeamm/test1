@@ -1,12 +1,10 @@
 .box{
-	width:600px;
-    background:#fff;
+	width:700px;
 	left:50%;
 	position: absolute;
-	transform: translate(-50%,10%);
+	transform: translate(-50%,0%);
 	box-sizing: border-box;
 	padding: 40px 30px;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	border-radius: 10px;
 }
 

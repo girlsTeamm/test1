@@ -12,13 +12,38 @@
 		href="../test1/javax.faces.resource/css/addUserRole.css" />	
 		 <link rel="stylesheet" type="text/css"
 		href="../test1/javax.faces.resource/css/form.css" />
+		    	<link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/bootstrap/bootstrap-rtl.css"/>
 </h:head>
+
+<b:form>
+<b:modal title="إضافة دور" styleClass="responsiveModalPseudoClass"
+         id="responsiveModal">
+         
+         <b:dataTable value="#{sysRoleBean.getListSysRole()}" var="role" 
+class="rolesTable">
+    <b:dataTableColumn value="#{role.arabicName} /#{role.englishName}" label="الاسم"/>
+    <b:dataTableColumn value="#{role.description}" label="الوصف"/>
+    <b:dataTableColumn label="إضافة الدور">
+      <b:commandButton value="" icon-awesome="glyphicon glyphicon-plus"
+       onclick="" look="success"/>
+    </b:dataTableColumn>
+  </b:dataTable> 
+  
+  <f:facet name="footer">
+    <b:button value="إلغاء" dismiss="modal" />
+    <b:button value="تم" look="primary" dismiss="modal" />
+  </f:facet>
+</b:modal>
+</b:form>
+
 <div class="container">
 <f:metadata>
     <f:viewParam name="UserId" value="#{sysUserBean.userid}" />
 </f:metadata>
 
 <div class="box">
+
 
 <b:form horizontal="true" >
 
@@ -33,16 +58,33 @@
 
    <b:panelGrid colSpans="3,9" >	
 
-       <b:form horizontal="true" >
        <h2>اسم المستخدم</h2>
-       <p>(محصح,مدقق,مستخدم)</p> 
-       <h1/><h1/>
-      </b:form>
       
-<b:dataTable value="#{sysUserBean.ShowRoleForUser(sysUserBean.userid)}" var="role" >
-    <b:dataTableColumn value="#{role.arabicName} /#{role.englishName}" label="الاسم"/>
-  </b:dataTable> 
+ <b:form horizontal="true">
 
+      <b:button value="إضافة دور" icon="glyphicon glyphicon-plus"  
+      onclick="$('.responsiveModalPseudoClass').modal();" look="success"
+      style="margin-left:7px;"/>
+      
+      <b:commandButton value="إعادة تحميل" icon="glyphicon glyphicon-refresh" ajax="true" 
+      update="@(.content)" onclick="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}"
+      look="info" style="margin-left:7px;"/>
+      
+      <b:commandButton value="حذف جميع الأدوار" icon-awesome="fa-trash-o" ajax="true" 
+      update="@(.rolesTable)" onclick="" look="danger"/>
+      
+   <h1/>
+      
+<b:dataTable value="#{sysUserBean.ShowRoleForUser(sysUserBean.userid)}" var="role" 
+class="rolesTable">
+    <b:dataTableColumn value="#{role.arabicName} /#{role.englishName}" label="الاسم"/>
+    <b:dataTableColumn value="#{role.description}" label="الوصف"/>
+    <b:dataTableColumn label="حذف الدور">
+      <b:commandButton value="" icon-awesome="fa-trash-o" ajax="true" 
+      update="@(.rolesTable)" onclick="#{sysRoleBean.deletUserRole(role,sysUserBean.userid)}" look="danger"/>
+    </b:dataTableColumn>
+  </b:dataTable> 
+   </b:form>
 
 </b:panelGrid>
 

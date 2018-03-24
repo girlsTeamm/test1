@@ -36,10 +36,7 @@ public class SysUserBean implements Serializable {
 
 	private SysUser sysuser;
 	private SysUserService sysUserService;
-	private UserRoleService userRoleService;
 	private SysRoleService sysRoleService;
-	private List<SysUser> listuser;
-	private Set<UserRole> userRole;
 	private String userid;
 
 	
@@ -49,18 +46,13 @@ public class SysUserBean implements Serializable {
 	public SysUserBean(){
 		sysuser= new SysUser();
 		sysUserService= (SysUserService) BeanUtility.getBean("sysUserService");
-		userRoleService= (UserRoleService)BeanUtility.getBean("userRoleService");
 		sysRoleService=(SysRoleService)BeanUtility.getBean("sysRoleService");
-		listuser= new ArrayList<SysUser>();
-		userRole = new HashSet<>();
 	}
 	
 
-	public SysUserBean(SysUser sysuser, List<SysUser> listuser,Set<UserRole> userRole) {
+	public SysUserBean(SysUser sysuser) {
 		super();
 		this.sysuser = sysuser;
-		this.listuser = listuser;
-		this.userRole=userRole;
 	}
 
 	public void addUser(){
@@ -83,29 +75,8 @@ public class SysUserBean implements Serializable {
 		this.sysUserService = sysUserService;
 	}
 
-	public List<SysUser> getListuser() {
-		return listuser;
-	}
-
-	public UserRoleService getUserRoleService() {
-		return userRoleService;
-	}
-	public void setUserRoleService(UserRoleService userRoleService) {
-		this.userRoleService = userRoleService;
-	}
-	public void setListuser(List<SysUser> listuser) {
-		this.listuser = listuser;
-	}
-
 	public List<SysUser> getListUser(){
 		return sysUserService.getAll();	
-	}
-	public Set<UserRole> getUserRole() {
-		return userRole;
-	}
-	
-	public void setUserRole(Set<UserRole> userRole) {
-		this.userRole = userRole;
 	}
 	public SysRoleService getSysRoleService() {
 		return sysRoleService;
@@ -128,7 +99,7 @@ public class SysUserBean implements Serializable {
 	public List<SysRole> ShowRoleForUser(String userid){
 		Integer id = Integer.parseInt(userid);
 		SysUser user= sysUserService.getById(id);
-		userRole=user.getUserRoles();
+		Set<UserRole> userRole = user.getUserRoles();
 		
 		List<SysRole> listRole = new ArrayList<SysRole>();
 		
@@ -138,5 +109,7 @@ public class SysUserBean implements Serializable {
 			}
 			return listRole;
 		}
+	
+	
 	
 }

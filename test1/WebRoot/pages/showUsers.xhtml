@@ -14,27 +14,33 @@
 		href="../test1/javax.faces.resource/css/form.css" />
 		 <link rel="stylesheet" type="text/css"
 		href="../test1/javax.faces.resource/css/homepage.css" />
+		    	<link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/bootstrap/bootstrap-rtl.css"/>
 </h:head>
 
 <div class="box">
 <h:form >
 
-    
+<p:panel header="عرض بيانات المستخدمين">  
 <b:panelGrid colSpans="12">	
 
 <b:dataTable value="#{sysUserBean.getListUser()}" var="user" >
     <b:dataTableColumn value="#{user.name} #{user.surname}" label="الاسم"/>
-    <b:dataTableColumn label="تعديل السماحيات">
-      <h:commandButton value="تعديل" icon="edit" ajax="true"
-                       onclick="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}" look="">
+    <b:dataTableColumn value="#{user.fatherName}" label="اسم الأب"/>
+    <b:dataTableColumn value="#{user.motherName}" label="اسم الأم"/>
+    <b:dataTableColumn label="تعديل الأدوار">
+      <p:commandButton value="تعديل" icon="fa fa-fw fa-edit" ajax="true" 
+                       onclick="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}" >
                         <f:param name="UserId" value="#{user.id}" />
-      </h:commandButton>
+      </p:commandButton>
+   
  
     </b:dataTableColumn>
   </b:dataTable> 
 
 
-</b:panelGrid>      
+</b:panelGrid>  
+</p:panel>    
 </h:form>
 </div>
 
