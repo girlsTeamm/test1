@@ -46,40 +46,25 @@
        onkeyup=""  onclick="" update="@none"></b:inputText>
       <h1/>
  </b:panelGrid>
-         
-           <b:panelGrid colSpans="2,8,2" style="text-align:right;">
-       <p:outputLabel value="رقم الهاتف"/>
-       <b:inputText placeholder="" ></b:inputText>
-      <h1/>
-
-       <p:outputLabel value="الايميل"/>   
-       <b:form horizontal="true">
-       <b:inputText placeholder="" ></b:inputText>
-       <small>لضمان أمان حسابك واسترداده في حال نسيت كلمة المرور.</small>  
-      </b:form>
-      <h1/>
-</b:panelGrid><br/><br/>
-
+ <hr />
     <b:panelGrid colSpans="2,6,4" style="text-align:right;">
        <p:outputLabel value="اسم المستخدم"/>
        <b:inputText placeholder="" value="#{sysUserBean.sysuser.userName}"
        onkeyup=""  onclick="" update="@none"></b:inputText>
       <h1/>
  
-       <p:outputLabel value="كلمة المرور" type="Password"/>
+       <p:outputLabel value="كلمة المرور" />
        <b:inputText placeholder="من 5 إلى 15 حرف" value="#{sysUserBean.sysuser.password}"
-       onkeyup=""  onclick="" update="@none"></b:inputText>
+       onkeyup=""  onclick="" update="@none" type="Password"></b:inputText>
         <h1/>  
-        </b:panelGrid>
-        
-       <b:panelGrid colSpans="2,6,4">
+  
        <p:outputLabel value=""/>
           <b:selectBooleanCheckbox value="" caption="عرض كلمة المرور" />
           </b:panelGrid>
   <br/><br/>
   
        
-				<b:commandButton value="إنشاء حساب" update="panel" ajax="true"
+				<b:commandButton value="إنشاء حساب" update="@(.content)" ajax="true"
 				onclick="#{sysUserBean.addUser()}" look="primary" 
 				icon="check"></b:commandButton>
 		

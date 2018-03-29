@@ -100,15 +100,13 @@ public class SysUserBean implements Serializable {
 		Integer id = Integer.parseInt(userid);
 		SysUser user= sysUserService.getById(id);
 		Set<UserRole> userRole = user.getUserRoles();
-		
 		List<SysRole> listRole = new ArrayList<SysRole>();
 		
-			for(UserRole ur:userRole){
-				SysRole temp=sysRoleService.getById(ur.getSysRole().getId());
-				listRole.add(temp);
+			for(UserRole temp:userRole){
+				listRole.add(temp.getSysRole());
 			}
 			return listRole;
-		}
+	}
 	
 	
 	
