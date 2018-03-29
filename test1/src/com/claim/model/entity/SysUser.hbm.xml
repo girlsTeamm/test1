@@ -27,7 +27,7 @@
             <column name="mother_name" length="100" />
         </property>
         <set name="userRoles" table="user_role" inverse="true" lazy="false" fetch="select"
-        cascade="save-update,delete-orphan">
+        >
             <key>
                 <column name="sys_user" not-null="true" />
             </key>

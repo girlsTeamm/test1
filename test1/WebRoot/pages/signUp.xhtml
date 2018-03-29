@@ -58,14 +58,12 @@
        onkeyup=""  onclick="" update="@none" type="Password"></b:inputText>
         <h1/>  
   
-       <p:outputLabel value=""/>
-          <b:selectBooleanCheckbox value="" caption="عرض كلمة المرور" />
           </b:panelGrid>
   <br/><br/>
   
        
 				<b:commandButton value="إنشاء حساب" update="@(.content)" ajax="true"
-				onclick="#{sysUserBean.addUser()}" look="primary" 
+				action="#{sysUserBean.addUser()}" look="primary" 
 				icon="check"></b:commandButton>
 		
                     
