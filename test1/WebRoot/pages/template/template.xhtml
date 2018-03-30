@@ -37,10 +37,16 @@
 					styleClass="handCursor"
 					onclick="ajax:pageNavigation.navigate('/pages/showUsers.xhtml')"
 					oncomplete="primeUpdate();return false;"></b:navLink>
-
+<b:dropMenu value="الأدوار" >
+			      <b:navLink value="مدير النظام"></b:navLink>
+			      <b:navLink value="مصحح" ajax=" true" update="@(.content)"
+					onclick="ajax:pageNavigation.navigate('/pages/correcter.xhtml')"
+						oncomplete="primeUpdate();return false;"></b:navLink>
+			      <b:navLink value="مدقق" href="#"></b:navLink>
+      		</b:dropMenu>
 			</b:navbarLinks>
 
-
+			
   <b:navbarLinks pull="right" style="font-size:large;">
 			<b:navLink value="تسجيل الدخول" ajax="true" update="@(.content)"
 				 styleClass="handCursor"

@@ -17,7 +17,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost:3306/claimdb"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="raneemkador"></property>
+		<property name="password" value=""></property>
 	</bean>
 
 	<bean id="sessionFactory"
