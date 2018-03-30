@@ -26,7 +26,8 @@
         <property name="motherName" type="string">
             <column name="mother_name" length="100" />
         </property>
-        <set name="userRoles" table="user_role" inverse="true" lazy="true" fetch="select">
+        <set name="userRoles" table="user_role" inverse="true" lazy="false" fetch="select"
+        >
             <key>
                 <column name="sys_user" not-null="true" />
             </key>

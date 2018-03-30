@@ -67,25 +67,27 @@ public class SysRoleBean implements Serializable {
 	}
 
 	public void deletUserRole(SysRole Role,String userid){
-		
-		if (Role != null){
-			SysUser sysUser = new SysUser();
-			Integer id = Integer.parseInt(userid);
-			sysUser = sysUserService.getById(id);
-			Set<UserRole> userRole = sysUser.getUserRoles();
-			for(UserRole ur:userRole){
-				if(ur.getSysRole().equals(Role)){
-					sysUser.getUserRoles().remove(ur);
-					Role.getUserRoles().remove(ur);
-					sysUserService.merge(sysUser);
-					sysRoleService.merge(Role);
-				}
-			}		
+		Integer id = Integer.parseInt(userid);
+//		SysUser user= sysUserService.getById(id);
+//		SysRole Role = sysRoleService.getById(Roleid);
+		for(UserRole temp: userRoleService.getAll()){
+			if((temp.getSysRole().equals(Role)) && (temp.getSysUser().getId()== id)){
+				userRoleService.delete(temp);
+				break;
+			}
+			   
 		}
-		sysRole = new SysRole();
 	}
 
-
+    public void deleteAllRolesforUser(String userid){
+    	
+    	Integer id = Integer.parseInt(userid);
+		SysUser user= sysUserService.getById(id);
+		for(UserRole temp:user.getUserRoles()){
+			userRoleService.delete(temp);
+		}	
+    }
+    
 	public List<SysRole> getListSysRole() {
 		return sysRoleService.getAll();
 

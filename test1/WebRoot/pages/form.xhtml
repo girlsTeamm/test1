@@ -24,74 +24,42 @@
     <hr />
 </b:panelGrid>
 
+   <b:panelGrid colSpans="3,6,3">	
 
-    <b:panelGrid colSpans="2,6,4" style="text-align:right;">	
-    <p:outputLabel value="الاسم الأول"/>
-       <b:inputText placeholder=""></b:inputText>
-  <h1></h1>
- 
-       <p:outputLabel value="الشهرة"/>
-       <b:inputText placeholder=""></b:inputText>
-   <h1></h1>
-         
-      <p:outputLabel  value="المحافظة"  style="float:right;"/>     
-
-        <b:selectOneMenu  value="">
-            <f:selectItem itemLabel="دمشق" itemValue="" />
-            <f:selectItem itemLabel="ريف دمشق" itemValue="Xbox One" />
-            <f:selectItem itemLabel="حمص" itemValue="PS4" />
-            <f:selectItem itemLabel="درعا" itemValue="Wii U" />
+      <p:outputLabel value="نوع الشكوى:*"/>
+   
+     <b:selectOneMenu  value="">
+            <f:selectItem itemLabel="خدمية" itemValue="" />
+            <f:selectItem itemLabel="إدارية" itemValue="" />
         </b:selectOneMenu>
-       <h1></h1>
-       
-           <p:outputLabel value="رقم الهاتف"/>
-               <b:inputText placeholder=""></b:inputText>
-           <h1></h1>
+              <h1></h1>	
 
-       <p:outputLabel value="الايميل"/>   
-         <b:inputText placeholder=""></b:inputText>  
-        <h1></h1>
-
-        
-        </b:panelGrid><br/>
-       
-    <b:panelGrid colSpans="12" >
-         <p:outputLabel  value="متى حدثت المشكلة التي تريد تقديم الشكوى بشأنها؟"/>
-    
-    </b:panelGrid>   
-    <p:calendar/>
-    <br/><br/>
-        
-<b:panelGrid colSpans="12">	
-      <p:outputLabel value="ماهو اسم المؤسسة التي تشكو منها؟"/>
-      </b:panelGrid>
-      
-      <b:panelGrid colSpans="6,6">	
-
-    <b:inputText placeholder=""></b:inputText>
-      <h1></h1>
-    </b:panelGrid><br/>
-    
-    <b:panelGrid colSpans="12">	
-      <p:outputLabel value="ما الذي تأمل أن نتمكن من تحقيقه بخصوص شكواك؟"/>
-      </b:panelGrid>
-      
-      <b:panelGrid colSpans="6,6">	
+      <p:outputLabel value="موضوع الشكوى:*"/>
 
     <b:inputText placeholder=""></b:inputText>
       <h1></h1>
     </b:panelGrid><br/>
     
   <b:panelGrid colSpans="12" >
-     <p:outputLabel  value="وصف الشكوى"/>
-     </b:panelGrid>
-      <b:panelGrid colSpans="12">
-    <p:inputTextarea rows="5" 
-    autoResize="false"  />
+     <p:outputLabel  value="وصف الشكوى:*"/>
+     
+    <b:inputTextarea/>
+    
+      <br/><br/>
+      
+    <h:form enctype="multipart/form-data">
+ <p:outputLabel value="إذا كنت تملك أي دليل يدعم شكواك يرجى إرفاقه (صورة أو فيديو): "/>
+    <h:form>
+    <p:fileUpload fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced" 
+    dragDropSupport="false" multiple="true" update="messages" 
+    sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+ 
+    <p:growl id="messages" showDetail="true" />
+</h:form>
+ 
+    </h:form>
     </b:panelGrid>
-  <br/><br/>
-  
-
+  <br/><br/> <br/><br/> <br/><br/> <br/><br/>
   
   
  <b:panelGrid colSpans="3,3,3,3">

@@ -10,7 +10,11 @@
 		<property name="hibernate.default_schema">claimdb</property>
 		<property name="connection.url">jdbc:mysql://localhost:3306/claimdb</property>
 		<property name="connection.username">root</property>
+<<<<<<< HEAD
 		<property name="connection.password"></property>
+=======
+		<property name="connection.password">raneemkador</property>
+>>>>>>> branch 'master' of https://github.com/girlsTeamm/test1.git
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>

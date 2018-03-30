@@ -101,4 +101,72 @@ public class SysUser implements java.io.Serializable {
 		this.userRoles = userRoles;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((fatherName == null) ? 0 : fatherName.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((motherName == null) ? 0 : motherName.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		result = prime * result + ((userRoles == null) ? 0 : userRoles.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SysUser other = (SysUser) obj;
+		if (fatherName == null) {
+			if (other.fatherName != null)
+				return false;
+		} else if (!fatherName.equals(other.fatherName))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (motherName == null) {
+			if (other.motherName != null)
+				return false;
+		} else if (!motherName.equals(other.motherName))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (surname == null) {
+			if (other.surname != null)
+				return false;
+		} else if (!surname.equals(other.surname))
+			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
+		if (userRoles == null) {
+			if (other.userRoles != null)
+				return false;
+		} else if (!userRoles.equals(other.userRoles))
+			return false;
+		return true;
+	}
+	
+
 }

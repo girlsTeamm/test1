@@ -71,7 +71,8 @@ class="rolesTable">
       look="info" style="margin-left:7px;"/>
       
       <b:commandButton value="حذف جميع الأدوار" icon-awesome="fa-trash-o" ajax="true" 
-      update="@(.rolesTable)" onclick="" look="danger"/>
+       action="#{sysRoleBean.deleteAllRolesforUser(sysUserBean.userid)}" 
+      look="danger" update="@(.content)"/>
       
    <h1/>
       
@@ -81,7 +82,8 @@ class="rolesTable">
     <b:dataTableColumn value="#{role.description}" label="الوصف"/>
     <b:dataTableColumn label="حذف الدور">
       <b:commandButton value="" icon-awesome="fa-trash-o" ajax="true" 
-      update="@(.rolesTable)" onclick="#{sysRoleBean.deletUserRole(role,sysUserBean.userid)}" look="danger"/>
+       action="#{sysRoleBean.deletUserRole(role,sysUserBean.userid)}" 
+      look="danger" update="@(.content)"/>
     </b:dataTableColumn>
   </b:dataTable> 
    </b:form>

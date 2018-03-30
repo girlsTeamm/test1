@@ -29,7 +29,7 @@
     <b:dataTableColumn value="#{user.fatherName}" label="اسم الأب"/>
     <b:dataTableColumn value="#{user.motherName}" label="اسم الأم"/>
     <b:dataTableColumn label="تعديل الأدوار">
-      <p:commandButton value="تعديل" icon="fa fa-fw fa-edit" ajax="true" 
+      <p:commandButton value="تعديل" icon="fa fa-fw fa-edit" ajax="true" update="@(.content)"
                        onclick="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}" >
                         <f:param name="UserId" value="#{user.id}" />
       </p:commandButton>
