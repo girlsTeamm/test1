@@ -3,28 +3,28 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 03/04/2018 11:59:15 ? by Hibernate Tools 5.1.0.Beta1 -->
 <hibernate-mapping>
-    <class name="com.claim.model.entity.SysPermission" table="sys_permission" catalog="claimdb" optimistic-lock="version">
-        <id name="id" type="java.lang.Integer">
+    <class name="com.claim.model.entity.ClaimType" table="claim_type" catalog="claimdb" optimistic-lock="version">
+        <id name="id" type="java.lang.Short">
             <column name="id" />
             <generator class="identity" />
         </id>
         <property name="arabicName" type="string">
-            <column name="arabic_name" length="100" not-null="true" />
+            <column name="arabic_name" length="100" />
         </property>
         <property name="englishName" type="string">
-            <column name="english_name" length="100" not-null="true" />
+            <column name="english_name" length="100" />
         </property>
         <property name="description" type="string">
-            <column name="description" length="400" />
+            <column name="description" length="300" />
         </property>
         <property name="code" type="string">
-            <column name="code" length="50" not-null="true" />
+            <column name="code" length="50" />
         </property>
-        <set name="rolePermissions" table="role_permission" inverse="true" lazy="true" fetch="select">
+        <set name="claims" table="claim" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="sys_permission" not-null="true" />
+                <column name="claim_type" not-null="true" />
             </key>
-            <one-to-many class="com.claim.model.entity.RolePermission" />
+            <one-to-many class="com.claim.model.entity.Claim" />
         </set>
     </class>
 </hibernate-mapping>

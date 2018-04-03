@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/04/2018 11:59:15 ? by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.claim.model.entity.Workflow" table="workflow" catalog="claimdb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="arabicName" type="string">
+            <column name="arabic_name" length="200" />
+        </property>
+        <property name="englishName" type="string">
+            <column name="english_name" length="200" />
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="50" />
+        </property>
+        <set name="workflowDefinitions" table="workflow_definition" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="workflow" />
+            </key>
+            <one-to-many class="com.claim.model.entity.WorkflowDefinition" />
+        </set>
+    </class>
+</hibernate-mapping>
