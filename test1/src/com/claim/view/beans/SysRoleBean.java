@@ -93,6 +93,8 @@ public class SysRoleBean implements Serializable {
 
 	}
 
+	
+	
 
 	public SysRole getSysRole() {
 		return sysRole;
