@@ -11,8 +11,8 @@ public class Claim implements java.io.Serializable {
 	private Integer id;
 	private String subject;
 	private String description;
-	private Short claimType;
-	private Integer byUser;
+	private ClaimType claimType;
+	private SysUser byUser;
 	private Boolean isFixed;
 	private String userComment;
 
@@ -23,13 +23,13 @@ public class Claim implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Claim(Short claimType, Integer byUser) {
+	public Claim(ClaimType claimType, SysUser byUser) {
 		this.claimType = claimType;
 		this.byUser = byUser;
 	}
 
 	/** full constructor */
-	public Claim(String subject, String description, Short claimType, Integer byUser, Boolean isFixed,
+	public Claim(String subject, String description, ClaimType claimType, SysUser byUser, Boolean isFixed,
 			String userComment) {
 		this.subject = subject;
 		this.description = description;
@@ -65,19 +65,19 @@ public class Claim implements java.io.Serializable {
 		this.description = description;
 	}
 
-	public Short getClaimType() {
+	public ClaimType getClaimType() {
 		return this.claimType;
 	}
 
-	public void setClaimType(Short claimType) {
+	public void setClaimType(ClaimType claimType) {
 		this.claimType = claimType;
 	}
 
-	public Integer getByUser() {
+	public SysUser getByUser() {
 		return this.byUser;
 	}
 
-	public void setByUser(Integer byUser) {
+	public void setByUser(SysUser byUser) {
 		this.byUser = byUser;
 	}
 

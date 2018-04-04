@@ -36,14 +36,16 @@
 
       <p:outputLabel value="موضوع الشكوى:*"/>
 
-    <b:inputText placeholder=""></b:inputText>
+    <b:inputText placeholder="" value="#{claimBean.claim.subject}"
+       onkeyup=""  onclick="" update="@none"/>
       <h1></h1>
     </b:panelGrid><br/>
     
   <b:panelGrid colSpans="12" >
      <p:outputLabel  value="وصف الشكوى:*"/>
      
-    <b:inputTextarea/>
+    <b:inputTextarea value="#{claimBean.claim.description}"
+       onkeyup=""  onclick="" update="@none"/>
     
       <br/><br/>
       
@@ -64,8 +66,8 @@
   
  <b:panelGrid colSpans="3,3,3,3">
    <h1></h1>
-       <b:commandButton value="إرسال" icon="check" ajax="true" 
-                       onclick="" 
+       <b:commandButton value="إرسال" update="@(.content)" icon="check" ajax="true" 
+                       action="#{claimBean.addClaim()}"
                        look="primary">
       </b:commandButton>
 
