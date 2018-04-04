@@ -6,6 +6,10 @@ package com.claim.model.entity;
  */
 public class ClaimWorkflow implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -579914356534955099L;
 	private Integer id;
 	private Claim claim;
 	private WorkflowDefinition workflowDefinition;

@@ -9,15 +9,19 @@ import java.util.Set;
  */
 public class Organization implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2360395520550876885L;
 	private Integer id;
 	private Organization organization;
 	private String arabicName;
 	private String englishName;
 	private String code;
-	private Set claimStatuses = new HashSet(0);
-	private Set sysUserOrganizations = new HashSet(0);
-	private Set claimStatusSteps = new HashSet(0);
-	private Set organizations = new HashSet(0);
+	private Set<ClaimStatus> claimStatuses = new HashSet<ClaimStatus>(0);
+	private Set<SysUserOrganization> sysUserOrganizations = new HashSet<SysUserOrganization>(0);
+	private Set<ClaimStatusStep> claimStatusSteps = new HashSet<ClaimStatusStep>(0);
+	private Set<Organization> organizations = new HashSet<Organization>(0);
 
 	public Organization() {
 	}
@@ -29,8 +33,13 @@ public class Organization implements java.io.Serializable {
 		this.code = code;
 	}
 
-	public Organization(Organization organization, String arabicName, String englishName, String code,
-			Set claimStatuses, Set sysUserOrganizations, Set claimStatusSteps, Set organizations) {
+
+
+	public Organization(Integer id, Organization organization, String arabicName, String englishName, String code,
+			Set<ClaimStatus> claimStatuses, Set<SysUserOrganization> sysUserOrganizations,
+			Set<ClaimStatusStep> claimStatusSteps, Set<Organization> organizations) {
+		super();
+		this.id = id;
 		this.organization = organization;
 		this.arabicName = arabicName;
 		this.englishName = englishName;
@@ -81,36 +90,37 @@ public class Organization implements java.io.Serializable {
 		this.code = code;
 	}
 
-	public Set getClaimStatuses() {
-		return this.claimStatuses;
+	public Set<ClaimStatus> getClaimStatuses() {
+		return claimStatuses;
 	}
 
-	public void setClaimStatuses(Set claimStatuses) {
+	public void setClaimStatuses(Set<ClaimStatus> claimStatuses) {
 		this.claimStatuses = claimStatuses;
 	}
 
-	public Set getSysUserOrganizations() {
-		return this.sysUserOrganizations;
+	public Set<SysUserOrganization> getSysUserOrganizations() {
+		return sysUserOrganizations;
 	}
 
-	public void setSysUserOrganizations(Set sysUserOrganizations) {
+	public void setSysUserOrganizations(Set<SysUserOrganization> sysUserOrganizations) {
 		this.sysUserOrganizations = sysUserOrganizations;
 	}
 
-	public Set getClaimStatusSteps() {
-		return this.claimStatusSteps;
+	public Set<ClaimStatusStep> getClaimStatusSteps() {
+		return claimStatusSteps;
 	}
 
-	public void setClaimStatusSteps(Set claimStatusSteps) {
+	public void setClaimStatusSteps(Set<ClaimStatusStep> claimStatusSteps) {
 		this.claimStatusSteps = claimStatusSteps;
 	}
 
-	public Set getOrganizations() {
-		return this.organizations;
+	public Set<Organization> getOrganizations() {
+		return organizations;
 	}
 
-	public void setOrganizations(Set organizations) {
+	public void setOrganizations(Set<Organization> organizations) {
 		this.organizations = organizations;
 	}
 
+	
 }

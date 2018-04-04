@@ -9,17 +9,21 @@ import java.util.Set;
  */
 public class ClaimType implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3100823260621042245L;
 	private Short id;
 	private String arabicName;
 	private String englishName;
 	private String description;
 	private String code;
-	private Set claims = new HashSet(0);
+	private Set<Claim> claims = new HashSet<Claim>(0);
 
 	public ClaimType() {
 	}
 
-	public ClaimType(String arabicName, String englishName, String description, String code, Set claims) {
+	public ClaimType(String arabicName, String englishName, String description, String code, Set<Claim> claims) {
 		this.arabicName = arabicName;
 		this.englishName = englishName;
 		this.description = description;
@@ -67,11 +71,11 @@ public class ClaimType implements java.io.Serializable {
 		this.code = code;
 	}
 
-	public Set getClaims() {
+	public Set<Claim> getClaims() {
 		return this.claims;
 	}
 
-	public void setClaims(Set claims) {
+	public void setClaims(Set<Claim> claims) {
 		this.claims = claims;
 	}
 

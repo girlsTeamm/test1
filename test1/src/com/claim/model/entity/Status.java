@@ -9,13 +9,17 @@ import java.util.Set;
  */
 public class Status implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3048208942677155877L;
 	private Short id;
 	private String arabicName;
 	private String englishName;
 	private String code;
 	private String description;
-	private Set claimStatuses = new HashSet(0);
-	private Set claimStatusSteps = new HashSet(0);
+	private Set<ClaimStatus> claimStatuses = new HashSet<ClaimStatus>(0);
+	private Set<ClaimStatusStep> claimStatusSteps = new HashSet<ClaimStatusStep>(0);
 
 	public Status() {
 	}
@@ -25,8 +29,8 @@ public class Status implements java.io.Serializable {
 		this.englishName = englishName;
 	}
 
-	public Status(String arabicName, String englishName, String code, String description, Set claimStatuses,
-			Set claimStatusSteps) {
+	public Status(String arabicName, String englishName, String code, String description, Set<ClaimStatus> claimStatuses,
+			Set<ClaimStatusStep> claimStatusSteps) {
 		this.arabicName = arabicName;
 		this.englishName = englishName;
 		this.code = code;
@@ -75,19 +79,19 @@ public class Status implements java.io.Serializable {
 		this.description = description;
 	}
 
-	public Set getClaimStatuses() {
+	public Set<ClaimStatus> getClaimStatuses() {
 		return this.claimStatuses;
 	}
 
-	public void setClaimStatuses(Set claimStatuses) {
+	public void setClaimStatuses(Set<ClaimStatus> claimStatuses) {
 		this.claimStatuses = claimStatuses;
 	}
 
-	public Set getClaimStatusSteps() {
+	public Set<ClaimStatusStep> getClaimStatusSteps() {
 		return this.claimStatusSteps;
 	}
 
-	public void setClaimStatusSteps(Set claimStatusSteps) {
+	public void setClaimStatusSteps(Set<ClaimStatusStep> claimStatusSteps) {
 		this.claimStatusSteps = claimStatusSteps;
 	}
 

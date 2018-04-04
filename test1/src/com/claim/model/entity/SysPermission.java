@@ -9,12 +9,16 @@ import java.util.Set;
  */
 public class SysPermission implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String arabicName;
 	private String englishName;
 	private String description;
 	private String code;
-	private Set rolePermissions = new HashSet(0);
+	private Set<RolePermission> rolePermissions = new HashSet<RolePermission>(0);
 
 	public SysPermission() {
 	}
@@ -25,7 +29,7 @@ public class SysPermission implements java.io.Serializable {
 		this.code = code;
 	}
 
-	public SysPermission(String arabicName, String englishName, String description, String code, Set rolePermissions) {
+	public SysPermission(String arabicName, String englishName, String description, String code, Set<RolePermission> rolePermissions) {
 		this.arabicName = arabicName;
 		this.englishName = englishName;
 		this.description = description;
@@ -73,11 +77,11 @@ public class SysPermission implements java.io.Serializable {
 		this.code = code;
 	}
 
-	public Set getRolePermissions() {
+	public Set<RolePermission> getRolePermissions() {
 		return this.rolePermissions;
 	}
 
-	public void setRolePermissions(Set rolePermissions) {
+	public void setRolePermissions(Set<RolePermission> rolePermissions) {
 		this.rolePermissions = rolePermissions;
 	}
 

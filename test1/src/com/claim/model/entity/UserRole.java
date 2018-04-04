@@ -6,6 +6,10 @@ package com.claim.model.entity;
  */
 public class UserRole implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5338638782369176993L;
 	private Integer id;
 	private SysRole sysRole;
 	private SysUser sysUser;

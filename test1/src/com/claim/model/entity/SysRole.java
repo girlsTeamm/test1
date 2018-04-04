@@ -9,13 +9,17 @@ import java.util.Set;
  */
 public class SysRole implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6346759127495765650L;
 	private Integer id;
 	private String arabicName;
 	private String englishName;
 	private String description;
 	private String code;
-	private Set userRoles = new HashSet(0);
-	private Set rolePermissions = new HashSet(0);
+	private Set<UserRole> userRoles = new HashSet<UserRole>(0);
+	private Set<RolePermission> rolePermissions = new HashSet<RolePermission>(0);
 
 	public SysRole() {
 	}
@@ -25,8 +29,8 @@ public class SysRole implements java.io.Serializable {
 		this.englishName = englishName;
 	}
 
-	public SysRole(String arabicName, String englishName, String description, String code, Set userRoles,
-			Set rolePermissions) {
+	public SysRole(String arabicName, String englishName, String description, String code, Set<UserRole> userRoles,
+			Set<RolePermission> rolePermissions) {
 		this.arabicName = arabicName;
 		this.englishName = englishName;
 		this.description = description;
@@ -75,20 +79,22 @@ public class SysRole implements java.io.Serializable {
 		this.code = code;
 	}
 
-	public Set getUserRoles() {
-		return this.userRoles;
+	public Set<UserRole> getUserRoles() {
+		return userRoles;
 	}
 
-	public void setUserRoles(Set userRoles) {
+	public void setUserRoles(Set<UserRole> userRoles) {
 		this.userRoles = userRoles;
 	}
 
-	public Set getRolePermissions() {
-		return this.rolePermissions;
+	public Set<RolePermission> getRolePermissions() {
+		return rolePermissions;
 	}
 
-	public void setRolePermissions(Set rolePermissions) {
+	public void setRolePermissions(Set<RolePermission> rolePermissions) {
 		this.rolePermissions = rolePermissions;
 	}
+
+
 
 }

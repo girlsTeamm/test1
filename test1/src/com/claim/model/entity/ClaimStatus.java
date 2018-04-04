@@ -6,6 +6,10 @@ package com.claim.model.entity;
  */
 public class ClaimStatus implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2839394470685721953L;
 	private Integer id;
 	private Claim claim;
 	private Organization organization;
