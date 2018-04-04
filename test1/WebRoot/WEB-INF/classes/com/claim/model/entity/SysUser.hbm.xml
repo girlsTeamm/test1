@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 10/03/2018 11:10:21 ? by Hibernate Tools 5.1.0.Beta1 -->
+<!-- Generated 03/04/2018 11:59:15 ? by Hibernate Tools 5.1.0.Beta1 -->
 <hibernate-mapping>
     <class name="com.claim.model.entity.SysUser" table="sys_user" catalog="claimdb" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
@@ -26,8 +26,31 @@
         <property name="motherName" type="string">
             <column name="mother_name" length="100" />
         </property>
-        <set name="userRoles" table="user_role" inverse="true" lazy="false" fetch="select"
-        >
+        <set name="claimWorkflowSteps" table="claim_workflow_step" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="by_user" not-null="true" />
+            </key>
+            <one-to-many class="com.claim.model.entity.ClaimWorkflowStep" />
+        </set>
+        <set name="claimStatusSteps" table="claim_status_step" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="by_user" not-null="true" />
+            </key>
+            <one-to-many class="com.claim.model.entity.ClaimStatusStep" />
+        </set>
+        <set name="claims" table="claim" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="by_user" not-null="true" />
+            </key>
+            <one-to-many class="com.claim.model.entity.Claim" />
+        </set>
+        <set name="sysUserOrganizations" table="sys_user_organization" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="sys_user" not-null="true" />
+            </key>
+            <one-to-many class="com.claim.model.entity.SysUserOrganization" />
+        </set>
+        <set name="userRoles" table="user_role" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="sys_user" not-null="true" />
             </key>

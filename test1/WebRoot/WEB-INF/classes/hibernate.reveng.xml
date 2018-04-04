@@ -2,10 +2,23 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-  <table-filter match-catalog="claimdb" match-name="user_role"/>
-  <table-filter match-catalog="claimdb" match-name="sys_user"/>
-  <table-filter match-catalog="claimdb" match-name="sys_role"/>
-  <table-filter match-catalog="claimdb" match-name="sys_permission"/>
+  <table-filter match-catalog="claimdb" match-name="claim"/>
+  <table-filter match-catalog="claimdb" match-name="claim_document"/>
+  <table-filter match-catalog="claimdb" match-name="claim_status"/>
+  <table-filter match-catalog="claimdb" match-name="claim_status_step"/>
+  <table-filter match-catalog="claimdb" match-name="claim_type"/>
+  <table-filter match-catalog="claimdb" match-name="claim_workflow"/>
+  <table-filter match-catalog="claimdb" match-name="claim_workflow_step"/>
+  <table-filter match-catalog="claimdb" match-name="document_type"/>
+  <table-filter match-catalog="claimdb" match-name="organization"/>
   <table-filter match-catalog="claimdb" match-name="role_permission"/>
+  <table-filter match-catalog="claimdb" match-name="status"/>
+  <table-filter match-catalog="claimdb" match-name="step"/>
+  <table-filter match-catalog="claimdb" match-name="sys_permission"/>
+  <table-filter match-catalog="claimdb" match-name="sys_role"/>
+  <table-filter match-catalog="claimdb" match-name="sys_user"/>
+  <table-filter match-catalog="claimdb" match-name="sys_user_organization"/>
+  <table-filter match-catalog="claimdb" match-name="user_role"/>
+  <table-filter match-catalog="claimdb" match-name="workflow"/>
+  <table-filter match-catalog="claimdb" match-name="workflow_definition"/>
 </hibernate-reverse-engineering>
-

@@ -1,5 +1,5 @@
 package com.claim.model.entity;
-// Generated 10/03/2018 11:10:21 ? by Hibernate Tools 5.1.0.Beta1
+// Generated 03/04/2018 11:59:14 ? by Hibernate Tools 5.1.0.Beta1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,11 +9,6 @@ import java.util.Set;
  */
 public class SysUser implements java.io.Serializable {
 
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -2354784378784546861L;
 	private Integer id;
 	private String userName;
 	private String password;
@@ -21,19 +16,27 @@ public class SysUser implements java.io.Serializable {
 	private String surname;
 	private String fatherName;
 	private String motherName;
-	private Set<UserRole> userRoles = new HashSet<UserRole>(0);
+	private Set claimWorkflowSteps = new HashSet(0);
+	private Set claimStatusSteps = new HashSet(0);
+	private Set claims = new HashSet(0);
+	private Set sysUserOrganizations = new HashSet(0);
+	private Set userRoles = new HashSet(0);
 
 	public SysUser() {
 	}
 
 	public SysUser(String userName, String password, String name, String surname, String fatherName, String motherName,
-			Set<UserRole> userRoles) {
+			Set claimWorkflowSteps, Set claimStatusSteps, Set claims, Set sysUserOrganizations, Set userRoles) {
 		this.userName = userName;
 		this.password = password;
 		this.name = name;
 		this.surname = surname;
 		this.fatherName = fatherName;
 		this.motherName = motherName;
+		this.claimWorkflowSteps = claimWorkflowSteps;
+		this.claimStatusSteps = claimStatusSteps;
+		this.claims = claims;
+		this.sysUserOrganizations = sysUserOrganizations;
 		this.userRoles = userRoles;
 	}
 
@@ -93,80 +96,44 @@ public class SysUser implements java.io.Serializable {
 		this.motherName = motherName;
 	}
 
-	public Set<UserRole> getUserRoles() {
+	public Set getClaimWorkflowSteps() {
+		return this.claimWorkflowSteps;
+	}
+
+	public void setClaimWorkflowSteps(Set claimWorkflowSteps) {
+		this.claimWorkflowSteps = claimWorkflowSteps;
+	}
+
+	public Set getClaimStatusSteps() {
+		return this.claimStatusSteps;
+	}
+
+	public void setClaimStatusSteps(Set claimStatusSteps) {
+		this.claimStatusSteps = claimStatusSteps;
+	}
+
+	public Set getClaims() {
+		return this.claims;
+	}
+
+	public void setClaims(Set claims) {
+		this.claims = claims;
+	}
+
+	public Set getSysUserOrganizations() {
+		return this.sysUserOrganizations;
+	}
+
+	public void setSysUserOrganizations(Set sysUserOrganizations) {
+		this.sysUserOrganizations = sysUserOrganizations;
+	}
+
+	public Set getUserRoles() {
 		return this.userRoles;
 	}
 
-	public void setUserRoles(Set<UserRole> userRoles) {
+	public void setUserRoles(Set userRoles) {
 		this.userRoles = userRoles;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((fatherName == null) ? 0 : fatherName.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((motherName == null) ? 0 : motherName.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
-		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
-		result = prime * result + ((userRoles == null) ? 0 : userRoles.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		SysUser other = (SysUser) obj;
-		if (fatherName == null) {
-			if (other.fatherName != null)
-				return false;
-		} else if (!fatherName.equals(other.fatherName))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (motherName == null) {
-			if (other.motherName != null)
-				return false;
-		} else if (!motherName.equals(other.motherName))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (surname == null) {
-			if (other.surname != null)
-				return false;
-		} else if (!surname.equals(other.surname))
-			return false;
-		if (userName == null) {
-			if (other.userName != null)
-				return false;
-		} else if (!userName.equals(other.userName))
-			return false;
-		if (userRoles == null) {
-			if (other.userRoles != null)
-				return false;
-		} else if (!userRoles.equals(other.userRoles))
-			return false;
-		return true;
-	}
-	
 
 }

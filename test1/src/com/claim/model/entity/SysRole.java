@@ -1,5 +1,5 @@
 package com.claim.model.entity;
-// Generated 10/03/2018 11:10:21 ? by Hibernate Tools 5.1.0.Beta1
+// Generated 03/04/2018 11:59:14 ? by Hibernate Tools 5.1.0.Beta1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,8 +14,8 @@ public class SysRole implements java.io.Serializable {
 	private String englishName;
 	private String description;
 	private String code;
-	private Set<UserRole> userRoles = new HashSet<UserRole>(0);
-	private Set<RolePermission> rolePermissions = new HashSet<RolePermission>(0);
+	private Set userRoles = new HashSet(0);
+	private Set rolePermissions = new HashSet(0);
 
 	public SysRole() {
 	}
@@ -25,8 +25,8 @@ public class SysRole implements java.io.Serializable {
 		this.englishName = englishName;
 	}
 
-	public SysRole(String arabicName, String englishName, String description, String code, Set<UserRole> userRoles,
-			Set<RolePermission> rolePermissions) {
+	public SysRole(String arabicName, String englishName, String description, String code, Set userRoles,
+			Set rolePermissions) {
 		this.arabicName = arabicName;
 		this.englishName = englishName;
 		this.description = description;
@@ -75,82 +75,20 @@ public class SysRole implements java.io.Serializable {
 		this.code = code;
 	}
 
-	public Set<UserRole> getUserRoles() {
+	public Set getUserRoles() {
 		return this.userRoles;
 	}
 
-	public void setUserRoles(Set<UserRole> userRoles) {
+	public void setUserRoles(Set userRoles) {
 		this.userRoles = userRoles;
 	}
 
-	public Set<RolePermission> getRolePermissions() {
+	public Set getRolePermissions() {
 		return this.rolePermissions;
 	}
 
-	public void setRolePermissions(Set<RolePermission> rolePermissions) {
+	public void setRolePermissions(Set rolePermissions) {
 		this.rolePermissions = rolePermissions;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((arabicName == null) ? 0 : arabicName.hashCode());
-		result = prime * result + ((code == null) ? 0 : code.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((englishName == null) ? 0 : englishName.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((rolePermissions == null) ? 0 : rolePermissions.hashCode());
-		result = prime * result + ((userRoles == null) ? 0 : userRoles.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		SysRole other = (SysRole) obj;
-		if (arabicName == null) {
-			if (other.arabicName != null)
-				return false;
-		} else if (!arabicName.equals(other.arabicName))
-			return false;
-		if (code == null) {
-			if (other.code != null)
-				return false;
-		} else if (!code.equals(other.code))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (englishName == null) {
-			if (other.englishName != null)
-				return false;
-		} else if (!englishName.equals(other.englishName))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (rolePermissions == null) {
-			if (other.rolePermissions != null)
-				return false;
-		} else if (!rolePermissions.equals(other.rolePermissions))
-			return false;
-		if (userRoles == null) {
-			if (other.userRoles != null)
-				return false;
-		} else if (!userRoles.equals(other.userRoles))
-			return false;
-		return true;
-	}
-	
 
 }

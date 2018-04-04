@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	 xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+ <link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/showUsers.css" />	
+		 <link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/form.css" />
+		 <link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/homepage.css" />
+		    	<link rel="stylesheet" type="text/css"
+		href="../test1/javax.faces.resource/css/bootstrap/bootstrap-rtl.css"/>
+</h:head>
+
+<div class="box">
+<h:form >
+
+<p:panel header="عرض بيانات المستخدمين">  
+<b:panelGrid colSpans="12">	
+
+	<b:dataTable value="#{sysUserBean.getListUser()}" var="user" >
+    		<b:dataTableColumn value="#{user.name}" label="أسم مقدم الشكوى"/>
+		    <b:dataTableColumn value="#{user.fatherName}" label="موضوع الشكوى" />
+		    <b:dataTableColumn value="#{user.fatherName}" label="نوع الشكوى" />
+		    <b:dataTableColumn label="">
+		      <p:commandButton value="تصحيح الشكوى" icon="fa fa-fw fa-edit" ajax="true" 
+		                       action="#{pageNavigation.navigate('/pages/editclaim.xhtml')}" >
+		                        <f:param name="UserId" value="#{user.id}" />
+		      </p:commandButton>
+    		</b:dataTableColumn>
+  	</b:dataTable> 
+
+
+</b:panelGrid>  
+</p:panel>    
+</h:form>
+</div>
+</ui:composition>
