@@ -24,4 +24,32 @@
 	<bean name="userRoleDao" class="com.claim.model.dao.impl.UserRoleDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	<bean name="claimDao" class="com.claim.model.dao.impl.ClaimDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="claimTypeDao" class="com.claim.model.dao.impl.ClaimTypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="claimWorkflowStepDao" class="com.claim.model.dao.impl.ClaimWorkflowStepDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="claimWorkflowDao" class="com.claim.model.dao.impl.ClaimWorkflowDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="claimStatusDao" class="com.claim.model.dao.impl.ClaimStatusDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="claimDocumentDao" class="com.claim.model.dao.impl.ClaimDocumentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="claimStatusStepDao" class="com.claim.model.dao.impl.ClaimStatusStepDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 </beans>

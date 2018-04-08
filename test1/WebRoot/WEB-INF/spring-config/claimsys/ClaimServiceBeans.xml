@@ -24,4 +24,33 @@
 	<bean name="userRoleService" class="com.claim.model.service.impl.UserRoleServiceImpl">
 		<property name="dao" ref="userRoleDao"></property>
 	</bean>
+	
+		
+	<bean name="claimService" class="com.claim.model.service.impl.ClaimServiceImpl">
+		<property name="dao" ref="claimDao"></property>
+	</bean>
+	
+	<bean name="claimTypeService" class="com.claim.model.service.impl.ClaimTypeServiceImpl">
+		<property name="dao" ref="claimTypeDao"></property>
+	</bean>
+	
+	<bean name="claimWorkflowStepService" class="com.claim.model.service.impl.ClaimWorkflowStepServiceImpl">
+		<property name="dao" ref="claimWorkflowStepDao"></property>
+	</bean>
+	
+	<bean name="claimWorkflowService" class="com.claim.model.service.impl.ClaimWorkflowServiceImpl">
+		<property name="dao" ref="claimWorkflowDao"></property>
+	</bean>
+	
+	<bean name="claimStatusService" class="com.claim.model.service.impl.ClaimStatusServiceImpl">
+		<property name="dao" ref="claimStatusDao"></property>
+	</bean>
+	
+	<bean name="claimDocumentService" class="com.claim.model.service.impl.ClaimDocumentServiceImpl">
+		<property name="dao" ref="claimDocumentDao"></property>
+	</bean>
+	
+	<bean name="claimStatusStepService" class="com.claim.model.service.impl.ClaimStatusStepServiceImpl">
+		<property name="dao" ref="claimStatusStepDao"></property>
+	</bean>
 </beans>

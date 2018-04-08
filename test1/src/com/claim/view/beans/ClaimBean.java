@@ -2,6 +2,7 @@ package com.claim.view.beans;
 
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -21,11 +22,21 @@ public class ClaimBean implements Serializable {
 	private Claim claim;
 	private ClaimService claimService;
 	
+	@PostConstruct
+	public void init() {
+	}
 	public ClaimBean(){
-		super();
 		claim = new Claim();
 		claimService = (ClaimService) BeanUtility.getBean("claimService");
 	}
+
+	
+
+	public ClaimBean(Claim claim) {
+		super();
+		this.claim = claim;
+	}
+
 
 
 	public Claim getClaim() {

@@ -29,15 +29,16 @@
       <p:outputLabel value="نوع الشكوى:*"/>
    
      <b:selectOneMenu  value="">
-            <f:selectItem itemLabel="خدمية" itemValue="" />
-            <f:selectItem itemLabel="إدارية" itemValue="" />
+            <f:selectItem itemLabel="خدمية"  />
+            <f:selectItem itemLabel="إدارية" />
         </b:selectOneMenu>
               <h1></h1>	
 
       <p:outputLabel value="موضوع الشكوى:*"/>
 
     <b:inputText placeholder="" value="#{claimBean.claim.subject}"
-       onkeyup=""  onclick="" update="@none"/>
+       onkeyup=""  onclick="" update="@none">
+       </b:inputText>
       <h1></h1>
     </b:panelGrid><br/>
     
