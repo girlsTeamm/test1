@@ -26,31 +26,31 @@
         <property name="motherName" type="string">
             <column name="mother_name" length="100" />
         </property>
-        <set name="claimWorkflowSteps" table="claim_workflow_step" inverse="true" lazy="true" fetch="select">
+        <set name="claimWorkflowSteps" table="claim_workflow_step" inverse="true" lazy="true" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="by_user" not-null="true" />
             </key>
             <one-to-many class="com.claim.model.entity.ClaimWorkflowStep" />
         </set>
-        <set name="claimStatusSteps" table="claim_status_step" inverse="true" lazy="true" fetch="select">
+        <set name="claimStatusSteps" table="claim_status_step" inverse="true" lazy="true" fetch="select" cascade="save-update,all-delete-orphan"> 
             <key>
                 <column name="by_user" not-null="true" />
             </key>
             <one-to-many class="com.claim.model.entity.ClaimStatusStep" />
         </set>
-        <set name="claims" table="claim" inverse="true" lazy="true" fetch="select">
+        <set name="claims" table="claim" inverse="true" lazy="true" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="by_user" not-null="true" />
             </key>
             <one-to-many class="com.claim.model.entity.Claim" />
         </set>
-        <set name="sysUserOrganizations" table="sys_user_organization" inverse="true" lazy="true" fetch="select">
+        <set name="sysUserOrganizations" table="sys_user_organization" inverse="true" lazy="true" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="sys_user" not-null="true" />
             </key>
             <one-to-many class="com.claim.model.entity.SysUserOrganization" />
         </set>
-        <set name="userRoles" table="user_role" inverse="true" lazy="true" fetch="select">
+        <set name="userRoles" table="user_role" inverse="true" lazy="true" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="sys_user" not-null="true" />
             </key>

@@ -19,21 +19,21 @@
 	   <b:panelGrid colSpans="12" >	
 			<b:form horizontal="true">  
      			<br /> <br />			    
-				<b:dataTable value="#{sysUserBean.ShowRoleForUser(sysUserBean.getFromSession())}" var="role" 
+				<b:dataTable value="#{sysRoleBean.ShowPermissionForRole(sysRoleBean.getFromSession())}" var="permission" 
 				class="rolesTable">
-				    <b:dataTableColumn value="#{role.arabicName} /#{role.englishName}" label="الاسم"/>
-				    <b:dataTableColumn value="#{role.description}" label="الوصف"/>
+				    <b:dataTableColumn value="#{permission.arabicName} /#{permission.englishName}" label="الاسم"/>
+				    <b:dataTableColumn value="#{permission.description}" label="الوصف"/>
 				    <b:dataTableColumn label="إضافة/حذف">
-				    	<p:selectBooleanButton id="value1" value="#{sysUserBean.t[role]}" onLabel="حذف" offLabel="إضافة" ajax="true" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:100px;" />
+				    	<p:selectBooleanButton id="value1" value="#{sysRoleBean.t[permission]}" onLabel="حذف" offLabel="إضافة" ajax="true" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:100px;" />
 				    </b:dataTableColumn>
 				</b:dataTable> <br></br>
     				
     				<p:commandButton value="حفظ" icon="fa fa-fw fa-edit" ajax="true" update="@all"
-                       action="#{pageNavigation.navigate('/pages/showUsers.xhtml')}" 
-                       ><f:actionListener binding="#{sysUserBean.check(sysUserBean.getFromSession())}"/>
+                       action="#{pageNavigation.navigate('/pages/permissionTable.xhtml')}" 
+                       ><f:actionListener binding="#{sysRoleBean.check(sysRoleBean.getFromSession())}"/>
      				 </p:commandButton>
   					<p:commandButton value="إلغاء" icon="fa fa-fw fa-edit" ajax="true" update="@all"
-                       action="#{pageNavigation.navigate('/pages/showUsers.xhtml')}" 
+                       action="#{pageNavigation.navigate('/pages/permissionTable.xhtml')}" 
                        >
      				 </p:commandButton>
 			</b:form>

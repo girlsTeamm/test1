@@ -34,10 +34,15 @@
 
 
 			<b:navLink value="تعديل الأدوار" ajax="true" 
-					styleClass="handCursor"
+					styleClass="handCursor" 
 					onclick="ajax:pageNavigation.navigate('/pages/showUsers.xhtml')"
 					oncomplete="primeUpdate();return false;"></b:navLink>
-<b:dropMenu value="الأدوار" >
+			<b:navLink value="تعديل السماحيات" ajax="true" 
+					styleClass="handCursor" 
+					onclick="ajax:pageNavigation.navigate('/pages/permissionTable.xhtml')"
+					oncomplete="primeUpdate();return false;"></b:navLink>
+			
+			<b:dropMenu value="الأدوار" >
 			      <b:navLink value="مدير النظام"></b:navLink>
 			      <b:navLink value="مصحح" ajax=" true" update="@(.content)"
 					onclick="ajax:pageNavigation.navigate('/pages/correcter.xhtml')"

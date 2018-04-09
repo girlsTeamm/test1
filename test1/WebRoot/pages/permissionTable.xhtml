@@ -19,24 +19,20 @@
 </h:head>
 
 <h:form id ="form">
-
-<p:panel header="عرض بيانات المستخدمين">  
-
-<b:dataTable value="#{sysUserBean.getListUser()}" var="user" >
-    <b:dataTableColumn value="#{user.name} #{user.surname}" label="الاسم"/>
-    <b:dataTableColumn value="#{user.fatherName}" label="اسم الأب"/>
-    <b:dataTableColumn value="#{user.motherName}" label="اسم الأم"/>
-    <b:dataTableColumn label="تعديل الأدوار">
-      <p:commandButton value="تعديل" icon="fa fa-fw fa-edit" ajax="true" update="@all"
-                       action="#{pageNavigation.navigate('/pages/addUserRole.xhtml')}" 
-                       >
-                        <f:actionListener binding="#{sysUserBean.putInSeeion(user)}"/>
-      </p:commandButton>
-    </b:dataTableColumn>
-  </b:dataTable> 
-
-
-</p:panel>    
+	<p:panel header="عرض الأدوار">  
+		<b:dataTable value="#{sysRoleBean.getListRole()}" var="role" >
+		    <b:dataTableColumn value="#{role.code} " label="الرمز"/>
+		    <b:dataTableColumn value="#{role.englishName}/#{role.arabicName}" label="اسم الدور"/>
+		    <b:dataTableColumn value="#{role.description}" label="الوصف"/>
+		    <b:dataTableColumn label="تعديل السماحيات">
+		      <p:commandButton value="تعديل" icon="fa fa-fw fa-edit" ajax="true" update="@all"
+		                       action="#{pageNavigation.navigate('/pages/permission.xhtml')}" 
+		                       >
+		                        <f:actionListener binding="#{sysRoleBean.putInSeeion(role)}"/>
+		      </p:commandButton>
+		    </b:dataTableColumn>
+		</b:dataTable>
+	</p:panel>    
 </h:form>
 
 
