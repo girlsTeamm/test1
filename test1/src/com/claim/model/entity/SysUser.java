@@ -9,6 +9,161 @@ import java.util.Set;
  */
 public class SysUser implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -248922526097461101L;
+	private Integer id;
+	private String userName;
+	private String password;
+	private String name;
+	private String surname;
+	private String fatherName;
+	private String motherName;
+	private Set<ClaimStatusStep> claimWorkflowSteps = new HashSet<ClaimStatusStep>(0);
+	private Set<ClaimStatusStep> claimStatusSteps = new HashSet<ClaimStatusStep>(0);
+	private Set<Claim> claims = new HashSet<Claim>(0);
+	private Set<SysUserOrganization> sysUserOrganizations = new HashSet<SysUserOrganization>(0);
+	private Set<UserRole> userRoles = new HashSet<UserRole>(0);
+
+	public SysUser() {
+	}
+	public SysUser(Integer id, String userName, String password, String name, String surname, String fatherName,
+			String motherName, Set<ClaimStatusStep> claimWorkflowSteps, Set<ClaimStatusStep> claimStatusSteps,
+			Set<Claim> claims, Set<SysUserOrganization> sysUserOrganizations, Set<UserRole> userRoles) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.password = password;
+		this.name = name;
+		this.surname = surname;
+		this.fatherName = fatherName;
+		this.motherName = motherName;
+		this.claimWorkflowSteps = claimWorkflowSteps;
+		this.claimStatusSteps = claimStatusSteps;
+		this.claims = claims;
+		this.sysUserOrganizations = sysUserOrganizations;
+		this.userRoles = userRoles;
+	}
+
+
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSurname() {
+		return this.surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public String getFatherName() {
+		return this.fatherName;
+	}
+
+	public void setFatherName(String fatherName) {
+		this.fatherName = fatherName;
+	}
+
+	public String getMotherName() {
+		return this.motherName;
+	}
+
+	public void setMotherName(String motherName) {
+		this.motherName = motherName;
+	}
+
+
+
+	public Set<ClaimStatusStep> getClaimWorkflowSteps() {
+		return claimWorkflowSteps;
+	}
+
+
+
+	public void setClaimWorkflowSteps(Set<ClaimStatusStep> claimWorkflowSteps) {
+		this.claimWorkflowSteps = claimWorkflowSteps;
+	}
+
+
+
+	public Set<ClaimStatusStep> getClaimStatusSteps() {
+		return claimStatusSteps;
+	}
+
+
+
+	public void setClaimStatusSteps(Set<ClaimStatusStep> claimStatusSteps) {
+		this.claimStatusSteps = claimStatusSteps;
+	}
+
+
+
+	public Set<Claim> getClaims() {
+		return claims;
+	}
+
+
+
+	public void setClaims(Set<Claim> claims) {
+		this.claims = claims;
+	}
+
+
+
+	public Set<SysUserOrganization> getSysUserOrganizations() {
+		return sysUserOrganizations;
+	}
+
+
+
+	public void setSysUserOrganizations(Set<SysUserOrganization> sysUserOrganizations) {
+		this.sysUserOrganizations = sysUserOrganizations;
+	}
+
+
+
+	public Set<UserRole> getUserRoles() {
+		return userRoles;
+	}
+
+
+
+	public void setUserRoles(Set<UserRole> userRoles) {
+		this.userRoles = userRoles;
+	}
+
 	
 	@Override
 	public String toString() {
@@ -78,132 +233,6 @@ public class SysUser implements java.io.Serializable {
 		return true;
 	}
 
-	private Integer id;
-	private String userName;
-	private String password;
-	private String name;
-	private String surname;
-	private String fatherName;
-	private String motherName;
-	private Set claimWorkflowSteps = new HashSet(0);
-	private Set claimStatusSteps = new HashSet(0);
-	private Set claims = new HashSet(0);
-	private Set sysUserOrganizations = new HashSet(0);
-	private Set userRoles = new HashSet(0);
 
-	public SysUser() {
-	}
-
-	
-	public SysUser(String userName, String password, String name, String surname, String fatherName, String motherName,
-			Set claimWorkflowSteps, Set claimStatusSteps, Set claims, Set sysUserOrganizations, Set userRoles) {
-		this.userName = userName;
-		this.password = password;
-		this.name = name;
-		this.surname = surname;
-		this.fatherName = fatherName;
-		this.motherName = motherName;
-		this.claimWorkflowSteps = claimWorkflowSteps;
-		this.claimStatusSteps = claimStatusSteps;
-		this.claims = claims;
-		this.sysUserOrganizations = sysUserOrganizations;
-		this.userRoles = userRoles;
-	}
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSurname() {
-		return this.surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
-	public String getFatherName() {
-		return this.fatherName;
-	}
-
-	public void setFatherName(String fatherName) {
-		this.fatherName = fatherName;
-	}
-
-	public String getMotherName() {
-		return this.motherName;
-	}
-
-	public void setMotherName(String motherName) {
-		this.motherName = motherName;
-	}
-
-	public Set getClaimWorkflowSteps() {
-		return this.claimWorkflowSteps;
-	}
-
-	public void setClaimWorkflowSteps(Set claimWorkflowSteps) {
-		this.claimWorkflowSteps = claimWorkflowSteps;
-	}
-
-	public Set getClaimStatusSteps() {
-		return this.claimStatusSteps;
-	}
-
-	public void setClaimStatusSteps(Set claimStatusSteps) {
-		this.claimStatusSteps = claimStatusSteps;
-	}
-
-	public Set getClaims() {
-		return this.claims;
-	}
-
-	public void setClaims(Set claims) {
-		this.claims = claims;
-	}
-
-	public Set getSysUserOrganizations() {
-		return this.sysUserOrganizations;
-	}
-
-	public void setSysUserOrganizations(Set sysUserOrganizations) {
-		this.sysUserOrganizations = sysUserOrganizations;
-	}
-
-	public Set getUserRoles() {
-		return this.userRoles;
-	}
-
-	public void setUserRoles(Set userRoles) {
-		this.userRoles = userRoles;
-	}
 
 }

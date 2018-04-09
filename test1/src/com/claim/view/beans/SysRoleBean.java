@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.servlet.http.HttpSession;
@@ -43,7 +44,7 @@ public class SysRoleBean implements Serializable {
 	private RolePermissionService rolePermissionService;
 	private List<SysPermission> listPermission = new ArrayList<SysPermission>();
 	private List <SysPermission>listPermission2= new ArrayList<SysPermission>() ;
-	private Map<SysPermission,Boolean>Role =new HashMap<SysPermission, Boolean>();
+	private Map<SysPermission,Boolean> t =new HashMap<SysPermission, Boolean>();
 	public SysRoleBean() {
 		super();
 		
@@ -96,9 +97,9 @@ public class SysRoleBean implements Serializable {
     	
     	Integer id = Integer.parseInt(userid);
 		SysUser user= sysUserService.getById(id);
-		/*for(UserRole temp:user.getUserRoles()){
+		for(UserRole temp:user.getUserRoles()){
 			userRoleService.delete(temp);
-		}*/	
+		}
     }
     
 	public List<SysRole> getListSysRole() {
@@ -121,7 +122,7 @@ public class SysRoleBean implements Serializable {
 		List<SysPermission> listPermissionNoNe=sysPermissionService.getAll();
 		listPermission2=listPermissionNoNe;
 		for(SysPermission temp : listPermissionNoNe){
-			Role.put(temp, false);
+			t.put(temp, false);
 	    }
 	}
 	/**
@@ -142,7 +143,7 @@ public class SysRoleBean implements Serializable {
 		}
 		addtomap();
 	    for(SysPermission temp : listPermission){
-	    	Role.put(temp, true);
+	    	t.put(temp, true);
 	    }
 	    return listPermission2;
 	}
@@ -207,22 +208,42 @@ public class SysRoleBean implements Serializable {
 	}
 
 
-	public Map<SysPermission, Boolean> getRole() {
-		return Role;
+	public Map<SysPermission, Boolean> gett() {
+		return t;
 	}
-	public void setRole(Map<SysPermission, Boolean> Role) {
-		this.Role = Role;
+	
+	public List<SysPermission> getListPermission() {
+		return listPermission;
 	}
-	public void setListRole(List<SysPermission> listRole) {
-		this.listPermission = listRole;
+
+
+	public void setListPermission(List<SysPermission> listPermission) {
+		this.listPermission = listPermission;
 	}
+
+
+	public List<SysPermission> getListPermission2() {
+		return listPermission2;
+	}
+
+
+	public void setListPermission2(List<SysPermission> listPermission2) {
+		this.listPermission2 = listPermission2;
+	}
+
+
+	public void sett(Map<SysPermission, Boolean> role) {
+		t = role;
+	}
+
+
 	/**
 	 * to check if any changes in the specific role( add or delete any permission for role)
 	 * @param id
 	 **/
 	public void check(String id){
 		int Roleid =Integer.parseInt(id);
-		for (Map.Entry <SysPermission, Boolean> entry : Role.entrySet()) {
+		for (Map.Entry <SysPermission, Boolean> entry : t.entrySet()) {
 			if(entry.getValue()==true){
 				boolean t =false;
 				for (SysPermission object : listPermission) {

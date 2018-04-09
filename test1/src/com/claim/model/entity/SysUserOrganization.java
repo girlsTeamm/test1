@@ -6,6 +6,10 @@ package com.claim.model.entity;
  */
 public class SysUserOrganization implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6216530640829210208L;
 	private Integer id;
 	private Organization organization;
 	private SysUser sysUser;

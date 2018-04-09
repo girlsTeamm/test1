@@ -10,7 +10,92 @@ import java.util.Set;
 public class SysRole implements java.io.Serializable {
 
 	
-	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6346759127495765650L;
+	private Integer id;
+	private String arabicName;
+	private String englishName;
+	private String description;
+	private String code;
+	private Set<UserRole> userRoles = new HashSet<UserRole>(0);
+	private Set<RolePermission> rolePermissions = new HashSet<RolePermission>(0);
+
+	public SysRole() {
+	}
+
+	public SysRole(String arabicName, String englishName) {
+		this.arabicName = arabicName;
+		this.englishName = englishName;
+	}
+
+	public SysRole(String arabicName, String englishName, String description, String code, Set<UserRole> userRoles,
+			Set<RolePermission> rolePermissions) {
+		this.arabicName = arabicName;
+		this.englishName = englishName;
+		this.description = description;
+		this.code = code;
+		this.userRoles = userRoles;
+		this.rolePermissions = rolePermissions;
+	}
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getArabicName() {
+		return this.arabicName;
+	}
+
+	public void setArabicName(String arabicName) {
+		this.arabicName = arabicName;
+	}
+
+	public String getEnglishName() {
+		return this.englishName;
+	}
+
+	public void setEnglishName(String englishName) {
+		this.englishName = englishName;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Set<UserRole> getUserRoles() {
+		return userRoles;
+	}
+
+	public void setUserRoles(Set<UserRole> userRoles) {
+		this.userRoles = userRoles;
+	}
+
+	public Set<RolePermission> getRolePermissions() {
+		return rolePermissions;
+	}
+
+	public void setRolePermissions(Set<RolePermission> rolePermissions) {
+		this.rolePermissions = rolePermissions;
+	}
 
 	
 	@Override
@@ -68,86 +153,6 @@ public class SysRole implements java.io.Serializable {
 		return true;
 	}
 
-	private Integer id;
-	private String arabicName;
-	private String englishName;
-	private String description;
-	private String code;
-	private Set userRoles = new HashSet(0);
-	private Set rolePermissions = new HashSet(0);
 
-	public SysRole() {
-	}
-
-	public SysRole(String arabicName, String englishName) {
-		this.arabicName = arabicName;
-		this.englishName = englishName;
-	}
-
-	public SysRole(String arabicName, String englishName, String description, String code, Set userRoles,
-			Set rolePermissions) {
-		this.arabicName = arabicName;
-		this.englishName = englishName;
-		this.description = description;
-		this.code = code;
-		this.userRoles = userRoles;
-		this.rolePermissions = rolePermissions;
-	}
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getArabicName() {
-		return this.arabicName;
-	}
-
-	public void setArabicName(String arabicName) {
-		this.arabicName = arabicName;
-	}
-
-	public String getEnglishName() {
-		return this.englishName;
-	}
-
-	public void setEnglishName(String englishName) {
-		this.englishName = englishName;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Set getUserRoles() {
-		return this.userRoles;
-	}
-
-	public void setUserRoles(Set userRoles) {
-		this.userRoles = userRoles;
-	}
-
-	public Set getRolePermissions() {
-		return this.rolePermissions;
-	}
-
-	public void setRolePermissions(Set rolePermissions) {
-		this.rolePermissions = rolePermissions;
-	}
 
 }

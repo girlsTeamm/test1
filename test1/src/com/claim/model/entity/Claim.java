@@ -1,5 +1,5 @@
+
 package com.claim.model.entity;
-// Generated 03/04/2018 11:59:14 ? by Hibernate Tools 5.1.0.Beta1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,6 +9,10 @@ import java.util.Set;
  */
 public class Claim implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7912290330472672424L;
 	private Integer id;
 	private ClaimType claimType;
 	private SysUser sysUser;
@@ -16,11 +20,11 @@ public class Claim implements java.io.Serializable {
 	private String description;
 	private Boolean isFixed;
 	private String userComment;
-	private Set claimWorkflowSteps = new HashSet(0);
-	private Set claimStatuses = new HashSet(0);
-	private Set claimDocuments = new HashSet(0);
-	private Set claimStatusSteps = new HashSet(0);
-	private Set claimWorkflows = new HashSet(0);
+	private Set<ClaimWorkflowStep>claimWorkflowSteps = new HashSet<ClaimWorkflowStep>(0);
+	private Set<ClaimStatus> claimStatuses = new HashSet<ClaimStatus>(0);
+	private Set<ClaimDocument> claimDocuments = new HashSet<ClaimDocument>(0);
+	private Set<ClaimStatusStep> claimStatusSteps = new HashSet<ClaimStatusStep>(0);
+	private Set<ClaimWorkflow> claimWorkflows = new HashSet<ClaimWorkflow> (0);
 
 	public Claim() {
 	}
@@ -30,9 +34,12 @@ public class Claim implements java.io.Serializable {
 		this.sysUser = sysUser;
 	}
 
-	public Claim(ClaimType claimType, SysUser sysUser, String subject, String description, Boolean isFixed,
-			String userComment, Set claimWorkflowSteps, Set claimStatuses, Set claimDocuments, Set claimStatusSteps,
-			Set claimWorkflows) {
+	public Claim(Integer id, ClaimType claimType, SysUser sysUser, String subject, String description, Boolean isFixed,
+			String userComment, Set<ClaimWorkflowStep> claimWorkflowSteps, Set<ClaimStatus> claimStatuses,
+			Set<ClaimDocument> claimDocuments, Set<ClaimStatusStep> claimStatusSteps,
+			Set<ClaimWorkflow> claimWorkflows) {
+		super();
+		this.id = id;
 		this.claimType = claimType;
 		this.sysUser = sysUser;
 		this.subject = subject;
@@ -47,7 +54,7 @@ public class Claim implements java.io.Serializable {
 	}
 
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(Integer id) {
@@ -55,7 +62,7 @@ public class Claim implements java.io.Serializable {
 	}
 
 	public ClaimType getClaimType() {
-		return this.claimType;
+		return claimType;
 	}
 
 	public void setClaimType(ClaimType claimType) {
@@ -63,7 +70,7 @@ public class Claim implements java.io.Serializable {
 	}
 
 	public SysUser getSysUser() {
-		return this.sysUser;
+		return sysUser;
 	}
 
 	public void setSysUser(SysUser sysUser) {
@@ -71,7 +78,7 @@ public class Claim implements java.io.Serializable {
 	}
 
 	public String getSubject() {
-		return this.subject;
+		return subject;
 	}
 
 	public void setSubject(String subject) {
@@ -79,7 +86,7 @@ public class Claim implements java.io.Serializable {
 	}
 
 	public String getDescription() {
-		return this.description;
+		return description;
 	}
 
 	public void setDescription(String description) {
@@ -87,7 +94,7 @@ public class Claim implements java.io.Serializable {
 	}
 
 	public Boolean getIsFixed() {
-		return this.isFixed;
+		return isFixed;
 	}
 
 	public void setIsFixed(Boolean isFixed) {
@@ -95,51 +102,54 @@ public class Claim implements java.io.Serializable {
 	}
 
 	public String getUserComment() {
-		return this.userComment;
+		return userComment;
 	}
 
 	public void setUserComment(String userComment) {
 		this.userComment = userComment;
 	}
 
-	public Set getClaimWorkflowSteps() {
-		return this.claimWorkflowSteps;
+	public Set<ClaimWorkflowStep> getClaimWorkflowSteps() {
+		return claimWorkflowSteps;
 	}
 
-	public void setClaimWorkflowSteps(Set claimWorkflowSteps) {
+	public void setClaimWorkflowSteps(Set<ClaimWorkflowStep> claimWorkflowSteps) {
 		this.claimWorkflowSteps = claimWorkflowSteps;
 	}
 
-	public Set getClaimStatuses() {
-		return this.claimStatuses;
+	public Set<ClaimStatus> getClaimStatuses() {
+		return claimStatuses;
 	}
 
-	public void setClaimStatuses(Set claimStatuses) {
+	public void setClaimStatuses(Set<ClaimStatus> claimStatuses) {
 		this.claimStatuses = claimStatuses;
 	}
 
-	public Set getClaimDocuments() {
-		return this.claimDocuments;
+	public Set<ClaimDocument> getClaimDocuments() {
+		return claimDocuments;
 	}
 
-	public void setClaimDocuments(Set claimDocuments) {
+	public void setClaimDocuments(Set<ClaimDocument> claimDocuments) {
 		this.claimDocuments = claimDocuments;
 	}
 
-	public Set getClaimStatusSteps() {
-		return this.claimStatusSteps;
+	public Set<ClaimStatusStep> getClaimStatusSteps() {
+		return claimStatusSteps;
 	}
 
-	public void setClaimStatusSteps(Set claimStatusSteps) {
+	public void setClaimStatusSteps(Set<ClaimStatusStep> claimStatusSteps) {
 		this.claimStatusSteps = claimStatusSteps;
 	}
 
-	public Set getClaimWorkflows() {
-		return this.claimWorkflows;
+	public Set<ClaimWorkflow> getClaimWorkflows() {
+		return claimWorkflows;
 	}
 
-	public void setClaimWorkflows(Set claimWorkflows) {
+	public void setClaimWorkflows(Set<ClaimWorkflow> claimWorkflows) {
 		this.claimWorkflows = claimWorkflows;
 	}
+	
+	
 
 }
+

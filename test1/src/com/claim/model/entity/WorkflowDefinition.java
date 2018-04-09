@@ -9,6 +9,10 @@ import java.util.Set;
  */
 public class WorkflowDefinition implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4867397164668591743L;
 	private Integer id;
 	private Step step;
 	private Workflow workflow;
@@ -16,18 +20,22 @@ public class WorkflowDefinition implements java.io.Serializable {
 	private WorkflowDefinition workflowDefinitionByPrevious;
 	private Boolean initialStep;
 	private Boolean finalStep;
-	private Set claimWorkflowSteps = new HashSet(0);
-	private Set workflowDefinitionsForNext = new HashSet(0);
-	private Set workflowDefinitionsForPrevious = new HashSet(0);
-	private Set claimWorkflows = new HashSet(0);
+	private Set<ClaimStatusStep> claimWorkflowSteps = new HashSet<ClaimStatusStep>(0);
+	private Set<WorkflowDefinition> workflowDefinitionsForNext = new HashSet<WorkflowDefinition>(0);
+	private Set<WorkflowDefinition> workflowDefinitionsForPrevious = new HashSet<WorkflowDefinition>(0);
+	private Set<ClaimWorkflow> claimWorkflows = new HashSet<ClaimWorkflow>(0);
 
 	public WorkflowDefinition() {
 	}
 
-	public WorkflowDefinition(Step step, Workflow workflow, WorkflowDefinition workflowDefinitionByNext,
+
+
+	public WorkflowDefinition(Integer id, Step step, Workflow workflow, WorkflowDefinition workflowDefinitionByNext,
 			WorkflowDefinition workflowDefinitionByPrevious, Boolean initialStep, Boolean finalStep,
-			Set claimWorkflowSteps, Set workflowDefinitionsForNext, Set workflowDefinitionsForPrevious,
-			Set claimWorkflows) {
+			Set<ClaimStatusStep> claimWorkflowSteps, Set<WorkflowDefinition> workflowDefinitionsForNext,
+			Set<WorkflowDefinition> workflowDefinitionsForPrevious, Set<ClaimWorkflow> claimWorkflows) {
+		super();
+		this.id = id;
 		this.step = step;
 		this.workflow = workflow;
 		this.workflowDefinitionByNext = workflowDefinitionByNext;
@@ -39,6 +47,8 @@ public class WorkflowDefinition implements java.io.Serializable {
 		this.workflowDefinitionsForPrevious = workflowDefinitionsForPrevious;
 		this.claimWorkflows = claimWorkflows;
 	}
+
+
 
 	public Integer getId() {
 		return this.id;
@@ -96,36 +106,54 @@ public class WorkflowDefinition implements java.io.Serializable {
 		this.finalStep = finalStep;
 	}
 
-	public Set getClaimWorkflowSteps() {
-		return this.claimWorkflowSteps;
+
+
+	public Set<ClaimStatusStep> getClaimWorkflowSteps() {
+		return claimWorkflowSteps;
 	}
 
-	public void setClaimWorkflowSteps(Set claimWorkflowSteps) {
+
+
+	public void setClaimWorkflowSteps(Set<ClaimStatusStep> claimWorkflowSteps) {
 		this.claimWorkflowSteps = claimWorkflowSteps;
 	}
 
-	public Set getWorkflowDefinitionsForNext() {
-		return this.workflowDefinitionsForNext;
+
+
+	public Set<WorkflowDefinition> getWorkflowDefinitionsForNext() {
+		return workflowDefinitionsForNext;
 	}
 
-	public void setWorkflowDefinitionsForNext(Set workflowDefinitionsForNext) {
+
+
+	public void setWorkflowDefinitionsForNext(Set<WorkflowDefinition> workflowDefinitionsForNext) {
 		this.workflowDefinitionsForNext = workflowDefinitionsForNext;
 	}
 
-	public Set getWorkflowDefinitionsForPrevious() {
-		return this.workflowDefinitionsForPrevious;
+
+
+	public Set<WorkflowDefinition> getWorkflowDefinitionsForPrevious() {
+		return workflowDefinitionsForPrevious;
 	}
 
-	public void setWorkflowDefinitionsForPrevious(Set workflowDefinitionsForPrevious) {
+
+
+	public void setWorkflowDefinitionsForPrevious(Set<WorkflowDefinition> workflowDefinitionsForPrevious) {
 		this.workflowDefinitionsForPrevious = workflowDefinitionsForPrevious;
 	}
 
-	public Set getClaimWorkflows() {
-		return this.claimWorkflows;
+
+
+	public Set<ClaimWorkflow> getClaimWorkflows() {
+		return claimWorkflows;
 	}
 
-	public void setClaimWorkflows(Set claimWorkflows) {
+
+
+	public void setClaimWorkflows(Set<ClaimWorkflow> claimWorkflows) {
 		this.claimWorkflows = claimWorkflows;
 	}
+
+	
 
 }

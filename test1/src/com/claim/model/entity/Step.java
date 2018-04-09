@@ -9,12 +9,16 @@ import java.util.Set;
  */
 public class Step implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Short id;
 	private String arabicName;
 	private String englishName;
 	private String code;
 	private String description;
-	private Set workflowDefinitions = new HashSet(0);
+	private Set<WorkflowDefinition> workflowDefinitions = new HashSet<WorkflowDefinition>(0);
 
 	public Step() {
 	}
@@ -24,7 +28,7 @@ public class Step implements java.io.Serializable {
 		this.englishName = englishName;
 	}
 
-	public Step(String arabicName, String englishName, String code, String description, Set workflowDefinitions) {
+	public Step(String arabicName, String englishName, String code, String description, Set<WorkflowDefinition> workflowDefinitions) {
 		this.arabicName = arabicName;
 		this.englishName = englishName;
 		this.code = code;
@@ -72,11 +76,11 @@ public class Step implements java.io.Serializable {
 		this.description = description;
 	}
 
-	public Set getWorkflowDefinitions() {
+	public Set<WorkflowDefinition> getWorkflowDefinitions() {
 		return this.workflowDefinitions;
 	}
 
-	public void setWorkflowDefinitions(Set workflowDefinitions) {
+	public void setWorkflowDefinitions(Set<WorkflowDefinition> workflowDefinitions) {
 		this.workflowDefinitions = workflowDefinitions;
 	}
 

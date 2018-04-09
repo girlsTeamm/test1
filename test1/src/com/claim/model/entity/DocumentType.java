@@ -9,12 +9,16 @@ import java.util.Set;
  */
 public class DocumentType implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2555501497957064034L;
 	private Short id;
 	private String arabicName;
 	private String englishName;
 	private String description;
 	private String code;
-	private Set claimDocuments = new HashSet(0);
+	private Set<ClaimDocument> claimDocuments = new HashSet<ClaimDocument>(0);
 
 	public DocumentType() {
 	}
@@ -24,7 +28,7 @@ public class DocumentType implements java.io.Serializable {
 		this.englishName = englishName;
 	}
 
-	public DocumentType(String arabicName, String englishName, String description, String code, Set claimDocuments) {
+	public DocumentType(String arabicName, String englishName, String description, String code, Set<ClaimDocument>  claimDocuments) {
 		this.arabicName = arabicName;
 		this.englishName = englishName;
 		this.description = description;
@@ -72,11 +76,11 @@ public class DocumentType implements java.io.Serializable {
 		this.code = code;
 	}
 
-	public Set getClaimDocuments() {
+	public Set<ClaimDocument>  getClaimDocuments() {
 		return this.claimDocuments;
 	}
 
-	public void setClaimDocuments(Set claimDocuments) {
+	public void setClaimDocuments(Set<ClaimDocument>  claimDocuments) {
 		this.claimDocuments = claimDocuments;
 	}
 

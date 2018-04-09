@@ -9,6 +9,83 @@ import java.util.Set;
  */
 public class SysPermission implements java.io.Serializable {
 
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer id;
+	private String arabicName;
+	private String englishName;
+	
+	private String description;
+	private String code;
+	private Set<RolePermission> rolePermissions = new HashSet<RolePermission>(0);
+
+	public SysPermission() {
+	}
+
+	public SysPermission(String arabicName, String englishName, String code) {
+		this.arabicName = arabicName;
+		this.englishName = englishName;
+		this.code = code;
+	}
+
+	public SysPermission(String arabicName, String englishName, String description, String code, Set<RolePermission> rolePermissions) {
+		this.arabicName = arabicName;
+		this.englishName = englishName;
+		this.description = description;
+		this.code = code;
+		this.rolePermissions = rolePermissions;
+	}
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getArabicName() {
+		return this.arabicName;
+	}
+
+	public void setArabicName(String arabicName) {
+		this.arabicName = arabicName;
+	}
+
+	public String getEnglishName() {
+		return this.englishName;
+	}
+
+	public void setEnglishName(String englishName) {
+		this.englishName = englishName;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Set<RolePermission> getRolePermissions() {
+		return this.rolePermissions;
+	}
+
+	public void setRolePermissions(Set<RolePermission> rolePermissions) {
+		this.rolePermissions = rolePermissions;
+	}
 	@Override
 	public String toString() {
 		return "SysPermission [id=" + id + ", arabicName=" + arabicName + ", englishName=" + englishName
@@ -62,79 +139,6 @@ public class SysPermission implements java.io.Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-
-	private Integer id;
-	private String arabicName;
-	private String englishName;
-	
-	private String description;
-	private String code;
-	private Set rolePermissions = new HashSet(0);
-
-	public SysPermission() {
-	}
-
-	public SysPermission(String arabicName, String englishName, String code) {
-		this.arabicName = arabicName;
-		this.englishName = englishName;
-		this.code = code;
-	}
-
-	public SysPermission(String arabicName, String englishName, String description, String code, Set rolePermissions) {
-		this.arabicName = arabicName;
-		this.englishName = englishName;
-		this.description = description;
-		this.code = code;
-		this.rolePermissions = rolePermissions;
-	}
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getArabicName() {
-		return this.arabicName;
-	}
-
-	public void setArabicName(String arabicName) {
-		this.arabicName = arabicName;
-	}
-
-	public String getEnglishName() {
-		return this.englishName;
-	}
-
-	public void setEnglishName(String englishName) {
-		this.englishName = englishName;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Set getRolePermissions() {
-		return this.rolePermissions;
-	}
-
-	public void setRolePermissions(Set rolePermissions) {
-		this.rolePermissions = rolePermissions;
 	}
 
 }

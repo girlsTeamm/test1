@@ -6,6 +6,10 @@ package com.claim.model.entity;
  */
 public class ClaimDocument implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8378890301392269899L;
 	private String id;
 	private Claim claim;
 	private DocumentType documentType;
