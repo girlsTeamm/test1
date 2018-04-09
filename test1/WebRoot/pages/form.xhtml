@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions">
-
+	
 <h:head>
    <link rel="stylesheet" type="text/css"
 		href="../test1/javax.faces.resource/css/form.css" />	
@@ -28,16 +29,15 @@
 
       <p:outputLabel value="نوع الشكوى:*"/>
    
-     <b:selectOneMenu  value="">
-            <f:selectItem itemLabel="خدمية"  />
-            <f:selectItem itemLabel="إدارية" />
+     <b:selectOneMenu  value="#{claimBean.claimType}">
+            <f:selectItem itemLabel="إدارية" itemValue="1"/>
+            <f:selectItem itemLabel="خدمية"  itemValue="2"/>
         </b:selectOneMenu>
               <h1></h1>	
 
       <p:outputLabel value="موضوع الشكوى:*"/>
 
-    <b:inputText placeholder="" value="#{claimBean.claim.subject}"
-       onkeyup=""  onclick="" update="@none">
+    <b:inputText placeholder="" value="#{claimBean.claim.subject}">
        </b:inputText>
       <h1></h1>
     </b:panelGrid><br/>
@@ -65,20 +65,13 @@
   <br/><br/> <br/><br/> <br/><br/> <br/><br/>
   
   
- <b:panelGrid colSpans="3,3,3,3">
-   <h1></h1>
-       <b:commandButton value="إرسال" update="@(.content)" icon="check" ajax="true" 
+
+       <b:commandButton value="إرسال" ajax="true" update="@all"
                        action="#{claimBean.addClaim()}"
-                       look="primary">
+                       >
       </b:commandButton>
+      
 
-       <b:commandButton value="إلغاء" icon="remove" ajax="true" 
-                       onclick="" 
-                       look="danger">
-      </b:commandButton>
- <h1></h1>
-
-    </b:panelGrid>
 </h:form>
 </div>
 
