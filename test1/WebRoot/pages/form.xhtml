@@ -63,16 +63,14 @@
     </h:form>
     </b:panelGrid>
   <br/><br/> <br/><br/> <br/><br/> <br/><br/>
-  
-  
+  </h:form>
+ <h:form>
+      <b:commandButton value="إرسال" update="@(.content)" ajax="true"
+				action="#{claimBean.addClaim()}" look="primary" 
+				icon="check"></b:commandButton>
+   </h:form>   
 
-       <b:commandButton value="إرسال" ajax="true" update="@all"
-                       action="#{claimBean.addClaim()}"
-                       >
-      </b:commandButton>
-      
 
-</h:form>
 </div>
 
 </div>
