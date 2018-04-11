@@ -154,6 +154,54 @@ public class WorkflowDefinition implements java.io.Serializable {
 		this.claimWorkflows = claimWorkflows;
 	}
 
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((finalStep == null) ? 0 : finalStep.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((initialStep == null) ? 0 : initialStep.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		WorkflowDefinition other = (WorkflowDefinition) obj;
+		if (finalStep == null) {
+			if (other.finalStep != null)
+				return false;
+		} else if (!finalStep.equals(other.finalStep))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (initialStep == null) {
+			if (other.initialStep != null)
+				return false;
+		} else if (!initialStep.equals(other.initialStep))
+			return false;
+		return true;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "WorkflowDefinition [id=" + id + ", initialStep=" + initialStep + ", finalStep=" + finalStep + "]";
+	}
+
 	
 
 }

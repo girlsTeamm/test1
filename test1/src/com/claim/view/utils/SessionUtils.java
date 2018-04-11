@@ -4,6 +4,9 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.claim.model.entity.Claim;
+import com.claim.model.entity.ClaimWorkflow;
+
 public class SessionUtils {
 
 	public static HttpSession getSession() {
@@ -30,5 +33,15 @@ public class SessionUtils {
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
 				.getExternalContext().getSession(false);
 		return session.getAttribute("Roleid").toString();
+	}
+	public static Claim getClaim(){
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+				.getExternalContext().getSession(false);
+		return (Claim) session.getAttribute("claim");
+	}
+	public static ClaimWorkflow getClaimWorkflow(){
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+				.getExternalContext().getSession(false);
+		return (ClaimWorkflow) session.getAttribute("claimWorkflow");
 	}
 }

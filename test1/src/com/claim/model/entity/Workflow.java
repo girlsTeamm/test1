@@ -69,4 +69,53 @@ public class Workflow implements java.io.Serializable {
 		this.workflowDefinitions = workflowDefinitions;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((arabicName == null) ? 0 : arabicName.hashCode());
+		result = prime * result + ((code == null) ? 0 : code.hashCode());
+		result = prime * result + ((englishName == null) ? 0 : englishName.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Workflow other = (Workflow) obj;
+		if (arabicName == null) {
+			if (other.arabicName != null)
+				return false;
+		} else if (!arabicName.equals(other.arabicName))
+			return false;
+		if (code == null) {
+			if (other.code != null)
+				return false;
+		} else if (!code.equals(other.code))
+			return false;
+		if (englishName == null) {
+			if (other.englishName != null)
+				return false;
+		} else if (!englishName.equals(other.englishName))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Workflow [id=" + id + ", arabicName=" + arabicName + ", englishName=" + englishName + ", code=" + code
+				+ "]";
+	}
+
 }

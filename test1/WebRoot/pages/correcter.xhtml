@@ -16,27 +16,24 @@
 		href="../test1/javax.faces.resource/css/bootstrap/bootstrap-rtl.css"/>
 </h:head>
 
-<div class="box">
-<h:form >
-
-<p:panel header="عرض بيانات المستخدمين">  
-<b:panelGrid colSpans="12">	
-
-	<b:dataTable value="#{sysUserBean.getListUser()}" var="user" >
-    		<b:dataTableColumn value="#{user.name}" label="أسم مقدم الشكوى"/>
-		    <b:dataTableColumn value="#{user.fatherName}" label="موضوع الشكوى" />
-		    <b:dataTableColumn value="#{user.fatherName}" label="نوع الشكوى" />
-		    <b:dataTableColumn label="">
-		      <p:commandButton value="تصحيح الشكوى" icon="fa fa-fw fa-edit" ajax="true" 
-		                       action="#{pageNavigation.navigate('/pages/editclaim.xhtml')}" >
-		                        <f:param name="UserId" value="#{user.id}" />
-		      </p:commandButton>
-    		</b:dataTableColumn>
-  	</b:dataTable> 
-
-
-</b:panelGrid>  
-</p:panel>    
-</h:form>
-</div>
+	<div class="box">
+		<h:form >
+			<p:panel header="عرض الشكاوى">  
+				<b:panelGrid colSpans="12">	
+					<b:dataTable value="#{claimWorkflowBean.getAllClaimInCorrectStep()}" var="claim" >
+						 <b:dataTableColumn value="#{claim.claim.id}" label="موضوع الشكوى" />
+						 <b:dataTableColumn value="#{claim.claim.subject}" label="نوع الشكوى" />
+						 <b:dataTableColumn value="" label="تاريخ تقديم الشكوى"/>
+						 <b:dataTableColumn label="">
+						    <p:commandButton value="تصحيح الشكوى" icon="fa fa-fw fa-edit" ajax="true"  update="@all"
+						                     action="#{pageNavigation.navigate('/pages/editclaim.xhtml')}" >
+						                     <f:actionListener binding="#{claimWorkflowBean.putInSeeion(claim)}" />
+						    </p:commandButton>
+				    	</b:dataTableColumn>
+  					</b:dataTable>
+				</b:panelGrid>  
+			</p:panel>    
+		</h:form>
+	</div>
+	
 </ui:composition>

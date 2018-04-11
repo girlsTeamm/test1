@@ -19,5 +19,9 @@
 		<mapping resource="com/claim/model/entity/RolePermission.hbm.xml" />
 		<mapping resource="com/claim/model/entity/SysPermission.hbm.xml" />
 		<mapping resource="com/claim/model/entity/SysUser.hbm.xml" />
+		<mapping resource="com/claim/model/entity/ClaimWorkflow.hbm.xml" />
+		<mapping resource="com/claim/model/entity/WorkflowDefinition.hbm.xml" />
+		<mapping resource="com/claim/model/entity/Claim.hbm.xml" />
+		<mapping resource="com/claim/model/entity/Step.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

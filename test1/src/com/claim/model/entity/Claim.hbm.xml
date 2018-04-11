@@ -26,31 +26,31 @@
         <property name="userComment" type="string">
             <column name="user_comment" length="18" />
         </property>
-        <set name="claimWorkflowSteps" table="claim_workflow_step" inverse="true" lazy="true" fetch="select">
+        <set name="claimWorkflowSteps" table="claim_workflow_step" inverse="false" lazy="true" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="claim" not-null="true" />
             </key>
             <one-to-many class="com.claim.model.entity.ClaimWorkflowStep" />
         </set>
-        <set name="claimStatuses" table="claim_status" inverse="true" lazy="true" fetch="select">
+        <set name="claimStatuses" table="claim_status" inverse="true" lazy="false" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="claim" not-null="true" />
             </key>
             <one-to-many class="com.claim.model.entity.ClaimStatus" />
         </set>
-        <set name="claimDocuments" table="claim_document" inverse="true" lazy="true" fetch="select">
+        <set name="claimDocuments" table="claim_document" inverse="true" lazy="false" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="claim" not-null="true" />
             </key>
             <one-to-many class="com.claim.model.entity.ClaimDocument" />
         </set>
-        <set name="claimStatusSteps" table="claim_status_step" inverse="true" lazy="true" fetch="select">
+        <set name="claimStatusSteps" table="claim_status_step" inverse="true" lazy="false" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="claim" not-null="true" />
             </key>
             <one-to-many class="com.claim.model.entity.ClaimStatusStep" />
         </set>
-        <set name="claimWorkflows" table="claim_workflow" inverse="true" lazy="true" fetch="select">
+        <set name="claimWorkflows" table="claim_workflow" inverse="true" lazy="false" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="claim" not-null="true" />
             </key>

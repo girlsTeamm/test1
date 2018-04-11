@@ -47,6 +47,7 @@ public class SysUserBean implements Serializable {
 	private List <SysRole>toto= new ArrayList<SysRole>() ;
 	private List<SysRole> listRole = new ArrayList<SysRole>();
 	private Map<SysRole,Boolean>t =new HashMap<SysRole, Boolean>();
+	private String roro="ffffff";
 	public List<SysRole> getListRole() {
 		return listRole;
 	}
@@ -179,4 +180,11 @@ public class SysUserBean implements Serializable {
 		  }
 	    }	
 	}
+	public String getRoro() {
+		return roro;
+	}
+	public void setRoro(String roro) {
+		this.roro = roro;
+	}
+	
 }

@@ -20,15 +20,15 @@
 	<b:row>
 		<b:column span="6">
 	       <p:outputLabel  value="موضوع  الشكوى" />     
-		   <b:inputText placeholder=""></b:inputText>
+		   <b:inputText placeholder="" value="#{claimWorkflowBean.claim.subject}" ></b:inputText>
 	        
 	      <p:outputLabel value="نوع الشكوى"/>
-	   	  <b:inputText placeholder=""></b:inputText>
+	   	  <b:inputText placeholder="" value="#{claimWorkflowBean.claim.subject}"></b:inputText>
 	      <h1></h1>
 	    </b:column>
 	    <b:column span="6">
 	      <p:outputLabel value="وصف الشكوى"/>
-	      <b:inputTextarea rows="5" ></b:inputTextarea>
+	      <b:inputTextarea rows="5" value="#{claimWorkflowBean.claim.description}"></b:inputTextarea>
 	      <h1></h1>
 	      
 	   	</b:column>
@@ -64,10 +64,10 @@
 		      </b:commandButton>
 	   </b:column>
 	   <b:column span="2" style="text-align: center;">
-	    <b:commandButton value="إلغاء" icon="remove" ajax="true" 
-		                       onclick="" 
-		                       look="danger">
-		      </b:commandButton>
+		    <p:commandButton value="حفظ" icon="fa fa-fw fa-edit" ajax="true"  update="@all"
+						                     action="#{pageNavigation.navigate('/pages/correcter.xhtml')}" >
+						                     <f:actionListener binding="#{claimWorkflowBean.Save()}" />
+			 </p:commandButton>
 	   </b:column>
 	   </b:row>	
 	</h:form>
