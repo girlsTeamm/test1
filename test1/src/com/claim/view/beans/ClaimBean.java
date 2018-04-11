@@ -21,7 +21,7 @@ public class ClaimBean implements Serializable {
 	
 	private Claim claim;
 	private ClaimService claimService;
-	
+	private String toto="manar";
 	@PostConstruct
 	public void init() {
 	}
@@ -60,6 +60,12 @@ public class ClaimBean implements Serializable {
 
 	public void addClaim(){
 		claimService.insert(claim);
+	}
+	public String getToto() {
+		return toto;
+	}
+	public void setToto(String toto) {
+		this.toto = toto;
 	}
 	
 

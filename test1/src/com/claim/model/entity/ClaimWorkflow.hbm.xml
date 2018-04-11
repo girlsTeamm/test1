@@ -8,10 +8,10 @@
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="claim" class="com.claim.model.entity.Claim" fetch="select">
+        <many-to-one name="claim" class="com.claim.model.entity.Claim" fetch="select" lazy="false">
             <column name="claim" not-null="true" />
         </many-to-one>
-        <many-to-one name="workflowDefinition" class="com.claim.model.entity.WorkflowDefinition" fetch="select">
+        <many-to-one name="workflowDefinition" class="com.claim.model.entity.WorkflowDefinition" fetch="select" lazy="false">
             <column name="workflow_definition" not-null="true" />
         </many-to-one>
     </class>

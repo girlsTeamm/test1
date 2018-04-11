@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
-  <runtime name="com.genuitec.runtime.generic.jee70"/>
+  <runtime name="Red Hat JBoss EAP 7.0 Runtime"/>
   <fixed facet="java"/>
   <fixed facet="jst.web"/>
   <fixed facet="wst.jsdt.web"/>

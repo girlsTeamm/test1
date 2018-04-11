@@ -148,6 +148,61 @@ public class Claim implements java.io.Serializable {
 	public void setClaimWorkflows(Set<ClaimWorkflow> claimWorkflows) {
 		this.claimWorkflows = claimWorkflows;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((isFixed == null) ? 0 : isFixed.hashCode());
+		result = prime * result + ((subject == null) ? 0 : subject.hashCode());
+		result = prime * result + ((userComment == null) ? 0 : userComment.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Claim other = (Claim) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (isFixed == null) {
+			if (other.isFixed != null)
+				return false;
+		} else if (!isFixed.equals(other.isFixed))
+			return false;
+		if (subject == null) {
+			if (other.subject != null)
+				return false;
+		} else if (!subject.equals(other.subject))
+			return false;
+		if (userComment == null) {
+			if (other.userComment != null)
+				return false;
+		} else if (!userComment.equals(other.userComment))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Claim [id=" + id + ", subject=" + subject + ", description=" + description + ", isFixed=" + isFixed
+				+ ", userComment=" + userComment + "]";
+	}
 	
 	
 

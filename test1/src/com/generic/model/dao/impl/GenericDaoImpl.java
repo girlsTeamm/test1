@@ -49,6 +49,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 	}
 
 	@Override
+	@Transactional
 	public T insert(T t) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -70,6 +71,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 	}
 
 	@Override
+	@Transactional
 	public List<T> insert(List<T> t) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -95,6 +97,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 	}
 
 	@Override
+	@Transactional
 	public boolean update(T t) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -115,6 +118,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 	}
 
 	@Override
+	@Transactional
 	public boolean update(List<T> t) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -140,6 +144,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 	}
 
 	@Override
+	@Transactional
 	public boolean delete(T t) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -160,6 +165,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 	}
 
 	@Override
+	@Transactional
 	public boolean delete(List<T> t) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -185,6 +191,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 	}
 
 	@Override
+	@Transactional
 	public boolean merge(T t) {
 		Session session = null;
 		try {
@@ -206,6 +213,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public List<T> getPages(Integer start, Integer pageSize) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -233,6 +241,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public T getById(Id id) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -250,6 +259,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public T getByUniqueField(String propertyName, Object propertyValue) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -272,6 +282,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public T load(Id id) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -313,6 +324,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public List<T> getPagesByFilter(Integer start, Integer pageSize, String propertyName, Object propertyValue) {
 		// TODO Auto-generated method stub
 		Session session = null;
@@ -342,6 +354,7 @@ public class GenericDaoImpl<T extends Serializable, Id extends Serializable> imp
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public List<T> getAllByFilter(String propertyName, Object propertyValue) {
 		// TODO Auto-generated method stub
 		Session session = null;

@@ -20,7 +20,7 @@
         <property name="description" type="string">
             <column name="description" length="18" />
         </property>
-        <set name="workflowDefinitions" table="workflow_definition" inverse="true" lazy="true" fetch="select">
+        <set name="workflowDefinitions" table="workflow_definition" inverse="true" lazy="true" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="step" />
             </key>
