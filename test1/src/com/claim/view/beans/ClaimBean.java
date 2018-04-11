@@ -27,7 +27,7 @@ public class ClaimBean implements Serializable {
 	private ClaimService claimService;
 	private SysUserService sysUserService;
 	private ClaimTypeService claimTypeService;
-	private String claimTypeString;
+	private String claimTypeString ;
 	
 	@PostConstruct
 	public void init() {
