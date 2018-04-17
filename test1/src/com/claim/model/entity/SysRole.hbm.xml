@@ -26,7 +26,7 @@
             </key>
             <one-to-many class="com.claim.model.entity.UserRole" />
         </set>
-        <set name="rolePermissions" table="role_permission" inverse="true" lazy="true" fetch="select" cascade="save-update,all-delete-orphan">
+        <set name="rolePermissions" table="role_permission" inverse="true" lazy="false" fetch="select" cascade="save-update,all-delete-orphan">
             <key>
                 <column name="sys_role" not-null="true" />
             </key>
