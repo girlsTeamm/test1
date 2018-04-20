@@ -28,7 +28,7 @@
 		      <p:commandButton value="تعديل" icon="fa fa-fw fa-edit" ajax="true" update="@all"
 		                       action="#{pageNavigation.navigate('/pages/permission.xhtml')}" 
 		                       >
-		                        
+		                        <f:actionListener binding="#{sysRoleBean.putInSeeion(role)}"/>
 		      </p:commandButton>
 		    </b:dataTableColumn>
 		</b:dataTable>

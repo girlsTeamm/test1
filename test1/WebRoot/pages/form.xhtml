@@ -7,71 +7,95 @@
 	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions">
 	
-<h:head>
-   <link rel="stylesheet" type="text/css"
-		href="../test1/javax.faces.resource/css/form.css" />	
-		    	<link rel="stylesheet" type="text/css"
-		href="../test1/javax.faces.resource/css/bootstrap/bootstrap-rtl.css"/>	
-</h:head>
-<div class="container">
+	<h:head>
+	
+	   <link rel="stylesheet" type="text/css"
+			 href="../test1/javax.faces.resource/css/form.css" />	
+			 
+	   <link rel="stylesheet" type="text/css"
+			 href="../test1/javax.faces.resource/css/bootstrap/bootstrap-rtl.css"/>
+			 	
+	</h:head>
+<b:form>
+   <b:modal title="رمز الشكوى" styleClass="responsiveModalPseudoClass"
+        id="responsiveModal">
+         
+       <p style="font-size: large">رمز الشكوى التي قمت بتقديمها هو : <strong>#{claimBean.uniqeCode}</strong></p>
+       <p>يستخدم هذا الرمز عند الاستعلام عن حالة الشكوى</p>
+  
+    <f:facet name="footer">
+    <b:button value="موافق" look="primary" dismiss="modal" />
+  </f:facet>
+</b:modal>
+</b:form>
+			<h:form >
+	<div class="container">
+	
+		<div class="formbox">
 		
-<div class="formbox">
-<h:form >
-<b:panelGrid colSpans="12">	
-    <h3>تقديم شكوى</h3><br />
-    </b:panelGrid>
-    <b:panelGrid colSpans="12">	
-    <p>الرجاء ملئ كامل الاستمارة لمساعدتنا في فهم شكاوك</p><br /><br />
-    <hr />
-</b:panelGrid>
 
-   <b:panelGrid colSpans="3,6,3">	
+			
+				<b:panelGrid colSpans="12">	
+				
+				    <h3>تقديم شكوى</h3><br />
+				    
+				</b:panelGrid>
+				
+				<b:panelGrid colSpans="12">	
+				
+				    <p>الرجاء ملئ كامل الاستمارة لمساعدتنا في فهم شكاوك</p><br /><br />
+				    <hr />
+				    
+			   </b:panelGrid>
+			   <b:panelGrid colSpans="3,6,3">
+				   <p:outputLabel value="نوع الشكوى:*"/>
+				   
+				   <b:selectOneMenu  value="#{claimBean.cltypestring}">
+				            <f:selectItem itemLabel="إدارية" itemValue="1"/>
+				            <f:selectItem itemLabel="خدمية"  itemValue="2"/>
+				   </b:selectOneMenu>
+				   
+				   <h1></h1>	
+				
+				   <p:outputLabel value="موضوع الشكوى:*"/>
+				   
+				   <b:inputText placeholder="" value="#{claimBean.claim.subject}"/>
 
-      <p:outputLabel value="نوع الشكوى:*"/>
-   
-     <b:selectOneMenu  value="#{claimBean.claimType}">
-            <f:selectItem itemLabel="إدارية" itemValue="1"/>
-            <f:selectItem itemLabel="خدمية"  itemValue="2"/>
-        </b:selectOneMenu>
-              <h1></h1>	
-
-      <p:outputLabel value="موضوع الشكوى:*"/>
-
-    <b:inputText placeholder="" value="#{claimBean.claim.subject}">
-       </b:inputText>
-      <h1></h1>
-    </b:panelGrid><br/>
+				   
+				   <h1></h1>
+			   </b:panelGrid><br/>
     
-  <b:panelGrid colSpans="12" >
-     <p:outputLabel  value="وصف الشكوى:*"/>
-     
-    <b:inputTextarea value="#{claimBean.claim.description}"
-       onkeyup=""  onclick="" update="@none"/>
-    
-      <br/><br/>
-      
-    <h:form enctype="multipart/form-data">
- <p:outputLabel value="إذا كنت تملك أي دليل يدعم شكواك يرجى إرفاقه (صورة أو فيديو): "/>
-    <h:form>
-    <p:fileUpload fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced" 
-    dragDropSupport="false" multiple="true" update="messages" 
-    sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
- 
-    <p:growl id="messages" showDetail="true" />
-</h:form>
- 
-    </h:form>
-    </b:panelGrid>
-  <br/><br/> <br/><br/> <br/><br/> <br/><br/>
-  </h:form>
- <h:form>
-      <b:commandButton value="إرسال" update="@(.content)" ajax="true"
-				action="#{claimBean.addClaim()}" look="primary" 
-				icon="check"></b:commandButton>
-   </h:form>   
-
-
-</div>
-
-</div>
+  			  <b:panelGrid colSpans="12" >
+			     	<p:outputLabel  value="وصف الشكوى:*"/>
+			     	
+			       	<b:inputTextarea value="#{claimBean.claim.description}"
+			                         onkeyup=""  onclick="" update="@none"/>
+			         <br/><br/>
+			         
+			         	<p:growl id="messages" showDetail="true" />
+  			  <b:panelGrid colSpans="12" >
+					    <p:outputLabel value="إذا كنت تملك أي دليل يدعم شكواك يرجى إرفاقه (صورة أو فيديو): "/>
+					    	
+						    
+						    <p:fileUpload fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced" 
+						    			  dragDropSupport="false" multiple="true" update="messages" 
+						    			  sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+						    </b:panelGrid>
+						    <br/><br/> <br/><br/> 
+				
+			</b:panelGrid>
+			
+						<b:commandButton value="إرسال" 
+									        action="#{claimBean.addClaim()}"  look="primary" 
+									         icon="check">
+									         
+					    </b:commandButton>
+					    <b:button value="code"
+					    onclick="$('.responsiveModalPseudoClass').modal();"></b:button>
+                
+		
+		</div>
+		
+	</div>
+		</h:form>
 </ui:composition>

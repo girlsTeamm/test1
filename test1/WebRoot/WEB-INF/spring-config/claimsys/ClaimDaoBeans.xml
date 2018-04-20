@@ -40,6 +40,9 @@
 	<bean name="claimWorkflowDao" class="com.claim.model.dao.impl.ClaimWorkflowDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	<bean name="workflowDefinitionDao" class="com.claim.model.dao.impl.WorkflowDefinitionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 	
 	<bean name="claimStatusDao" class="com.claim.model.dao.impl.ClaimStatusDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>

@@ -16,7 +16,11 @@
 	<bean name="sysRoleService" class="com.claim.model.service.impl.SysRoleServiceImpl">
 		<property name="dao" ref="sysRoleDao"></property>
 	</bean>
-
+	
+	<bean name="workflowDefinitionService" class="com.claim.model.service.impl.WorkflowDefinitionServiceImpl">
+		<property name="dao" ref="workflowDefinitionDao"></property>
+	</bean>
+	
 	<bean name="sysUserService" class="com.claim.model.service.impl.SysUserServiceImpl">
 		<property name="dao" ref="sysUserDao"></property>
 	</bean>

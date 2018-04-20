@@ -57,18 +57,13 @@
 	    </b:panel>
 	  <br/><br/>
 	   <h1></h1>
-	   <b:row><b:column span="2" style="text-align: center;">
-	   <b:commandButton value="إرسال" icon="check" ajax="true" 
-		                       onclick="" 
-		                       look="primary">
-		      </b:commandButton>
-	   </b:column>
-	   <b:column span="2" style="text-align: center;">
-		    <p:commandButton value="حفظ" icon="fa fa-fw fa-edit" ajax="true"  update="@all"
-						                     action="#{pageNavigation.navigate('/pages/correcter.xhtml')}" >
-						                     <f:actionListener binding="#{claimWorkflowBean.Save()}" />
-			 </p:commandButton>
-	   </b:column>
+	   <b:row>
+		   <b:column span="2" style="text-align: center;">
+			    <p:commandButton value="تدقيق الشكوى" icon="fa fa-fw fa-edit" ajax="true"  update="@all"
+							                     action="#{pageNavigation.navigate('/pages/correcter.xhtml')}" >
+							                      <f:actionListener binding="#{claimWorkflowBean.SaveINCurrentTable(1)}" />  
+				 </p:commandButton>
+		   </b:column>
 	   </b:row>	
 	</h:form>
 </div>

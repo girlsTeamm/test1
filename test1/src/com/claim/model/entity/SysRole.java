@@ -13,6 +13,7 @@ public class SysRole implements java.io.Serializable {
 
 	/**
 	 * 
+	 * 
 	 */
 	private static final long serialVersionUID = -6346759127495765650L;
 	private Integer id;

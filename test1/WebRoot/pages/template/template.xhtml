@@ -44,11 +44,15 @@
 			
 			
 			      <b:dropMenu value="الأدوار" >
-				      <b:navLink value="مدير النظام"></b:navLink>
+				      <b:navLink value="مدير النظام" ajax=" true" 
+						onclick="ajax:pageNavigation.navigate('/pages/adminPage.xhtml')"
+							oncomplete="primeUpdate();return false;"></b:navLink>
 				      <b:navLink value="مصحح" ajax=" true" 
 						onclick="ajax:pageNavigation.navigate('/pages/correcter.xhtml')"
 							oncomplete="primeUpdate();return false;"></b:navLink>
-				      <b:navLink value="مدقق" href="#"></b:navLink>
+				      <b:navLink value="مدقق" ajax=" true" 
+						onclick="ajax:pageNavigation.navigate('/pages/checker.xhtml')"
+							oncomplete="primeUpdate();return false;"></b:navLink>
       			</b:dropMenu>
 			</b:navbarLinks>
 
