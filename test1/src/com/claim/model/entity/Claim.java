@@ -20,6 +20,7 @@ public class Claim implements java.io.Serializable {
 	private String description;
 	private Boolean isFixed;
 	private String userComment;
+	private Integer code;
 	private Set<ClaimWorkflowStep>claimWorkflowSteps = new HashSet<ClaimWorkflowStep>(0);
 	private Set<ClaimStatus> claimStatuses = new HashSet<ClaimStatus>(0);
 	private Set<ClaimDocument> claimDocuments = new HashSet<ClaimDocument>(0);
@@ -147,6 +148,16 @@ public class Claim implements java.io.Serializable {
 
 	public void setClaimWorkflows(Set<ClaimWorkflow> claimWorkflows) {
 		this.claimWorkflows = claimWorkflows;
+	}
+	
+	
+
+	public Integer getCode() {
+		return code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	@Override

@@ -24,7 +24,8 @@
        <p>يستخدم هذا الرمز عند الاستعلام عن حالة الشكوى</p>
   
     <f:facet name="footer">
-    <b:button value="موافق" look="primary" dismiss="modal" />
+	<b:commandButton value="موافق" 
+		action="#{pageNavigation.navigate('/pages/addClaimDone.xhtml')}"  look="primary" />
   </f:facet>
 </b:modal>
 </b:form>
@@ -37,12 +38,11 @@
 			
 				<b:panelGrid colSpans="12">	
 				
-				    <h3>تقديم شكوى</h3><br />
-				    
+				    <h3>تقديم شكوى</h3><br />	
+				    		    
 				</b:panelGrid>
 				
-				<b:panelGrid colSpans="12">	
-				
+				<b:panelGrid colSpans="12">				
 				    <p>الرجاء ملئ كامل الاستمارة لمساعدتنا في فهم شكاوك</p><br /><br />
 				    <hr />
 				    
@@ -84,18 +84,13 @@
 						    <br/><br/> <br/><br/> 
 				
 			</b:panelGrid>
-			
-						<b:commandButton value="إرسال" 
-									        action="#{claimBean.addClaim()}"  look="primary" 
-									         icon="check">
-									         
-					    </b:commandButton>
-					    <b:button value="code"
-					    onclick="$('.responsiveModalPseudoClass').modal();"></b:button>
-                
-		
-		</div>
-		
+					    
+		 <h:form id="formId">
+             <p:commandButton value="إرسال" update="formId" id="ajax"
+                   actionListener="#{claimBean.addClaim()}"
+                     onclick="$('.responsiveModalPseudoClass').modal()" />
+         </h:form>
+       </div>
 	</div>
-		</h:form>
+</h:form>
 </ui:composition>

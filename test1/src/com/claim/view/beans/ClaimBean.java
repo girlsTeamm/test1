@@ -33,7 +33,8 @@ public class ClaimBean implements Serializable {
 	
 	private SysUserService sysUserService;
 	private ClaimTypeService claimTypeService;
-	private String cltypestring="1" ,UniqeCode = "1";
+	private String cltypestring ,UniqeCode="1";
+	private int code;
 	private WorkflowDefinitionService workflowDefinitionService ;
 	@PostConstruct
 	public void init() {
@@ -44,6 +45,9 @@ public class ClaimBean implements Serializable {
 		sysUserService = (SysUserService) BeanUtility.getBean("sysUserService");
 		claimTypeService = (ClaimTypeService) BeanUtility.getBean("claimTypeService");
 		workflowDefinitionService=(WorkflowDefinitionService)BeanUtility.getBean("workflowDefinitionService");
+		Random rand = new Random( System.currentTimeMillis() );
+		code = rand.nextInt( 999999 );
+		UniqeCode = String.valueOf(code);
 	}
 
 	
@@ -103,9 +107,6 @@ public class ClaimBean implements Serializable {
 		UniqeCode = uniqeCode;
 	}
 	public void addClaim(){
-		Random rand = new Random( System.currentTimeMillis() );
-		int n = rand.nextInt( 999999 );
-		UniqeCode = String.valueOf(n);
 		ClaimType claimType = new ClaimType();
 		SysUser sysUser = new SysUser();
 		Integer id = 1;
@@ -114,6 +115,7 @@ public class ClaimBean implements Serializable {
 		claimType = claimTypeService.getById(claimTypeid);
 		claim.setClaimType(claimType);
 		claim.setSysUser(sysUser);
+		claim.setCode(code);
 		//send claim to checker
 //		ClaimWorkflow claimWorkflow=new ClaimWorkflow();
 //		claimWorkflow.setClaim(claim);

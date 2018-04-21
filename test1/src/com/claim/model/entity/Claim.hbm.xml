@@ -23,6 +23,11 @@
         <property name="isFixed" type="java.lang.Boolean">
             <column name="is_fixed" />
         </property>
+        
+        <property name="code" type="java.lang.Integer">
+            <column name="code" />
+        </property>
+        
         <property name="userComment" type="string">
             <column name="user_comment" length="18" />
         </property>
